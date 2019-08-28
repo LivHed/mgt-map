@@ -8,12 +8,30 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+<style>
+  #map {
+    height: 100%;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+
     <title>My green travels</title>
   </head>
   <body>
+    
+    <header class="container-fluid navbar-section">
+         <nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand display-6" href="#">My Green Travels</a>
+       </nav>
+    </header> 
+    
+   
 
    <section class="container-fluid text-center">
-     <h1 class="display-6 text-center">My green travels</h1>
     <div class="row">
       <div class="col-12">
           <p class="lead">Do you want to arrive to a city and explore only those things that has something to do with sustainability? On this page you can choose a city in the search field from a list of the top 10 sustainable cities according to the Sustainable City Index. 
@@ -21,18 +39,23 @@
         </div>
     
     
-     <div class="row">
     <div class="col-12">
       <div id="map">
    
-      </div>
     </div>
     </div>
     </div>
   </section>
 
-
-
+<script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 10
+        });
+      }
+    </script>
 
 
     <!-- Optional JavaScript -->
@@ -44,7 +67,8 @@
   <!--I have added the markerclusterer file here which allows me to add the clusters to the map-->
    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
   <!--I have added the Google Maps API file which generates the maps-->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdUZr-tm7Rmc-0meyJj_jH3VtTzk7FBaU&callback=initMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdUZr-tm7Rmc-0meyJj_jH3VtTzk7FBaU&callback=initMap" async defer></script>
     <script src="assets/js/maps.js"></script>
+    
   </body>
 </html>
