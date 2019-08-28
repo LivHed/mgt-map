@@ -6,7 +6,18 @@ html, body {
 
 #map {
         height: 100%;
+        
       }
       
  div#map {min-height: 360px;}   /*using because of trouble with rendering the map, from video lesson 4 Google maps*/
+
+
+.header-text {
+        font-weight: bolder;
+        
+}
+
+.intro-text {
+        font-weight; lighter;
+}
 
