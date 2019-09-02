@@ -1,24 +1,14 @@
- /*    var infowindow; */
-     
-     /* center of the map is located in Zagreb, and zoom level is set to 3 */
-      
-      function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 45.878782, lng: 15.983716},
-          zoom: 3
-        }); 
-      
-   
+var map;
+var service;
+var infowindow;
 
-/* copied from google maps javascript api documentation, places library */
+function initMap() {
+  var london = new google.maps.LatLng(51.509865, -0.118092);
 
-function initialize() {
-  var london = new google.maps.LatLng(51.509865,-0.118092);
-
-    map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
       center: london,
-      zoom: 4
-    });  
+      zoom: 3
+    });
 
   var request = {
     location: london,
@@ -26,7 +16,53 @@ function initialize() {
     query: 'organic'
   };
 
- var service = new google.maps.places.PlacesService(map);
+  service = new google.maps.places.PlacesService(map);
+  service.textSearch(request, callback);
+}
+
+function callback(results, status) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      var place = results[i];
+      createMarker(results[i]);
+    }
+  }
+
+
+}
+
+
+/* var map;
+ var service;    
+ var infowindow;
+     
+     /* center of the map is located in Zagreb, and zoom level is set to 3 */
+      
+/*      function initMap() {
+         map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 45.878782, lng: 15.983716},
+          zoom: 3
+        }); 
+      
+   
+
+/* copied from google maps javascript api documentation, places library for Text Search request */
+
+/*  function initialize() {
+  var london = new google.maps.LatLng(51.509865, -0.118092); */
+
+ /*   map = new google.maps.Map(document.getElementById('map'), {
+      center: london,
+      zoom: 4
+    });  */
+
+/*  var request = {
+    location: london,
+    radius: '500',
+    query: 'organic'
+  };
+
+  service = new google.maps.places.PlacesService(map);
   service.textSearch(request, callback);
 }
 
@@ -38,9 +74,8 @@ function callback(results, status) {
     }
   }
 }
-      
-}
-
+}      
+*/
 
 
      /*Show markers */       
