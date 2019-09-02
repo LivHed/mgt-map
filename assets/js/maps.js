@@ -3,12 +3,20 @@ var service;
 var infowindow;
 
 function initMap() {
-  var london = new google.maps.LatLng(51.509865, -0.118092);
+  var myLatLng = new google.maps.LatLng(51.509865, -0.118092);
 
   map = new google.maps.Map(document.getElementById('map'), {
-      center: london,
+      center: myLatLng,
       zoom: 3
     });
+    
+  /*create markers*/  
+    var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'London'
+        });
+
 
   var request = {
     location: london,
