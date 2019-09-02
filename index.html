@@ -84,10 +84,11 @@
     
     <div class="col-12">
       <h4 class="result-heading">Green results</h4>
+      the list..
     </div>
     
-    <div class="col-12">
-      <button type="button" class="btn btn-info">Clear list</button>
+     <div class="col-12">
+      <button type="button" class="btn btn-info clear-btn">Clear list</button>
       </div>
     
     </div>
@@ -95,17 +96,13 @@
 
  <script>
  
-/*     var map;
-     var service;
-     var infowindow;
+
+     
+ /*    var infowindow; */
      
      /* center of the map is located in Zagreb, and zoom level is set to 3 */
      
-     function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 45.878782, lng: 15.983716},
-          zoom: 3
-        });
+     
        
       
   /*     var labels = "ABCDEFGHIJKLMONPQRSTUVWXYZ";
@@ -150,15 +147,20 @@
       ]
       */
       
-      
+   function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 45.878782, lng: 15.983716},
+          zoom: 3
+        }); 
       
      
+
 /* copied from google maps javascript api documentation, places library */
 
- function initialize() {
+function initialize() {
   var london = new google.maps.LatLng(51.509865,-0.118092);
 
-  map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
       center: london,
       zoom: 4
     });  
@@ -169,7 +171,7 @@
     query: 'organic'
   };
 
-  service = new google.maps.places.PlacesService(map);
+ var service = new google.maps.places.PlacesService(map);
   service.textSearch(request, callback);
 }
 
