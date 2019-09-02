@@ -71,6 +71,10 @@
   
   </div>
   
+  <div class="col-12">
+  <button class="btn btn-info text-center go-btn">Go</button>
+  </div>
+  
     
      <div class="col-12">
       <div id="map" style="height:100%">
@@ -90,14 +94,21 @@
   </section>
 
  <script>
+ 
+/*     var map;
+     var service;
+     var infowindow;
      
-      function initMap() {
+     /* center of the map is located in Zagreb, and zoom level is set to 3 */
+     
+     function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 45.878782, lng: 15.983716},
           zoom: 3
         });
+       
       
-       var labels = "ABCDEFGHIJKLMONPQRSTUVWXYZ";
+  /*     var labels = "ABCDEFGHIJKLMONPQRSTUVWXYZ";
        
        var markers = locations.map(function(location, i) {
           return new google.maps.Marker({
@@ -113,7 +124,7 @@
       var locations = [
         {lat: 51.509865, lng: -0.118092}, /*London, how do I add the title to the marker? change the rest below to my own cities */
         
-        {lat: -31.563910, lng: 147.154312},
+  /*      {lat: -31.563910, lng: 147.154312},
         {lat: -33.718234, lng: 150.363181},
         {lat: -33.727111, lng: 150.371124},
         {lat: -33.848588, lng: 151.209834},
@@ -137,10 +148,41 @@
         {lat: -42.735258, lng: 147.438000},
         {lat: -43.999792, lng: 170.463352}
       ]
+      */
       
       
       
+     
+/* copied from google maps javascript api documentation, places library */
+
+ function initialize() {
+  var london = new google.maps.LatLng(51.509865,-0.118092);
+
+  map = new google.maps.Map(document.getElementById('map'), {
+      center: london,
+      zoom: 4
+    });  
+
+  var request = {
+    location: london,
+    radius: '500',
+    query: 'organic'
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.textSearch(request, callback);
+}
+
+function callback(results, status) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      var place = results[i];
+      createMarker(results[i]);
+    }
+  }
+}
       
+}      
       
    /*     var locations = new google.maps.Marker({     /*shouldnt I write location here instead, so the position calls the location further down here? (maybe write marker there again as it was first..? 
           position: {lat: 51.509865, lng: -0.118092},
