@@ -3,19 +3,67 @@ var service;
 var infowindow;
 
 function initMap() {
-  var myLatLng = new google.maps.LatLng(51.509865, -0.118092);
+  var london = new google.maps.LatLng(51.509865, -0.118092);
 
   map = new google.maps.Map(document.getElementById('map'), {
-      center: myLatLng,
+      center: london,
       zoom: 3
     });
     
-  /*create markers*/  
-    var marker = new google.maps.Marker({
-          position: myLatLng,
+          
+     /*Show markers */       
+          var labels = "ABCDEFGHIJKLMONPQRSTUVWXYZ";
+     
+          
+    var locations = [
+        {lat: 51.509865, lng: -0.118092},  /*London*/
+        {lat: 41.084045, lng: -73.874256},  /*Stockholm*/
+        {lat: 55.953848, lng: -3.187799},   /*Edinbugrh*/
+        {lat: 1.290270, lng: 103.851959},  /*Singapore*/
+        {lat: 48.210033, lng: 16.363449},  /*Vienna*/
+        {lat: 47.376015, lng: 8.540490},  /*Zurich*/
+        {lat: 48.135466, lng: 11.567184},  /*Munich*/
+        {lat: 59.914063, lng: 10.746723},  /*Oslo*/
+        {lat: 22.302711, lng: 114.177216},  /*Hong Kong*/
+        {lat: 50.110924, lng: 8.682127},  /*Frankfurt*/
+     ];
+     
+/*      /*create markers 
+    var markers = new google.maps.Marker({
+          position: {lat: 51.509865, lng: -0.118092},
           map: map,
-          title: 'London'
+          title: 'London' */ 
+          
+          var markers = locations.map(function(location, i) {
+        return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
         });
+    });
+
+          
+/*  var locations = [
+  ['Stockholm', lat:59.334591, lng: 18.063240],
+  ['Coogee Beach', -33.923036, 151.259052, 5],
+  ['Cronulla Beach', -34.028249, 151.157507, 3],
+  ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
+  ['Maroubra Beach', -33.950198, 151.259302, 1]
+];
+/*   stockholm {lat:59.334591, lng: 18.063240}:
+        
+        position: stockholm,
+        map: map,
+        title: 'Stockholm'
+   
+       var ST_MARYS = { lat: 49.914134, lng: -6.314372 };  */
+      
+/*       var cities = {
+ 'Stockholm': {
+  position: { lat: lat:59.334591, lng: 18.063240,},
+  zoom: 4
+ }, */
+
+
 
 
   var request = {
