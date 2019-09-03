@@ -5,6 +5,7 @@
          zoom: 3,
          center: new google.maps.LatLng(45.878782, 15.983716), 
          mapTypeControl: false,
+         mapTypeId: google.maps.MapTypeId.ROADMAP
         });
 
        
@@ -33,7 +34,20 @@
         map: map
       });
       
-// To show infowindow with the name of the city      
+      
+   /*   map.addListener('center_changed', function() {
+            map.panTo(marker.getPosition());
+        });  */
+      
+
+      //zoom to 8 when click on the marker
+        marker.addListener('click', function() {
+          map.setZoom(8);
+          map.setCenter(marker.getPosition());
+        });   
+        
+      
+// To show infowindow with the name of the city when clicked on    
        google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
           infowindow.setContent(locations[i][0]);
@@ -43,6 +57,9 @@
     }
  
 
+ 
+ 
+ 
 
 //Text search request          
   var request = {
@@ -64,6 +81,40 @@ function callback(results, status) {
   }
 
 }
+
+
+/* map.addListener('center_changed', function() {
+          // 3 seconds after the center of the map has changed, pan back to the
+          // marker.
+          window.setTimeout(function() {
+            map.panTo(marker.getPosition());
+          }, 3000);
+        }); */
+
+/*Listen for click on the map for zoom
+        marker.addListener(map, 'click', function(event) {
+          map.setZoom(8);
+          map.setCenter(marker.getPosition());
+        });
+
+
+/* // Set the country restriction based on user input.
+// Also center and zoom the map on the given country.
+function setAutocompleteCountry() {
+ var city = $('#city').val();
+ if (city == 'all') {
+  autocomplete.setComponentRestrictions({ 'city': [] });
+  map.setCenter({ lat: 15, lng: 0 });
+  map.setZoom(2);
+ }
+ else {
+  autocomplete.setComponentRestrictions({ 'city': city });
+  map.setCenter(cities[city].center);
+  map.setZoom(cities[city].zoom);
+ }
+*/
+
+
 }
 
 /*what I want to be returned in the PlaceResult (info window or in the list?) 
