@@ -1,18 +1,18 @@
-var map;
+
 var service;
 var infowindow;
 
 function initMap() {
-  var london = new google.maps.LatLng(51.509865, -0.118092);
+  var myLatLng = new google.maps.LatLng(51.509865, -0.118092);
 
-  map = new google.maps.Map(document.getElementById('map'), {
-      center: london,
+ var map = new google.maps.Map(document.getElementById('map'), {
+      center: myLatLng,
       zoom: 3
     });
     
           
      /*Show markers */       
-          var labels = "ABCDEFGHIJKLMONPQRSTUVWXYZ";
+    var labels = "ABCDEFGHIJKLMONPQRSTUVWXYZ";
      
           
     var locations = [
@@ -28,18 +28,28 @@ function initMap() {
         {lat: 50.110924, lng: 8.682127},  /*Frankfurt*/
      ];
      
-/*      /*create markers 
+     /*create markers */
     var markers = new google.maps.Marker({
           position: {lat: 51.509865, lng: -0.118092},
           map: map,
-          title: 'London' */ 
+          title: 'London'
+          });
           
-          var markers = locations.map(function(location, i) {
+  /*        var markers = locations.map(function(location, i) {   */
         return new google.maps.Marker({
             position: location,
             label: labels[i % labels.length]
         });
-    });
+        
+        
+    /*    for (let i = 0; i < 10; i++);  */
+        
+        for (var i = 0; i < labels.length; i++)
+           
+        
+        
+  /*  });   */
+  
 
           
 /*  var locations = [
@@ -66,7 +76,7 @@ function initMap() {
 
 
 
-  var request = {
+/*  var request = {
     location: london,
     radius: '500',
     query: 'organic'
@@ -83,9 +93,9 @@ function callback(results, status) {
       createMarker(results[i]);
     }
   }
+*/
 
 
-}
 
 
 /* var map;
