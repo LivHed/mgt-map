@@ -1,52 +1,74 @@
-
-var service;
-var infowindow;
-
-function initMap() {
-  var myLatLng = new google.maps.LatLng(51.509865, -0.118092);
-
- var map = new google.maps.Map(document.getElementById('map'), {
-      center: myLatLng,
-      zoom: 3
-    });
+   function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+         zoom: 3,
+         center: new google.maps.LatLng(51.509865, -0.118092),
+         mapTypeControl: false,
+        });
+       
+         /*Show markers */       
+ /*   var labels = "ABCDEFGHIJKLMONPQRSTUVWXYZ";   */
+       
+       var locations = [
+          ['London', 51.509865, -0.118092],
+          ['Stockholm', 41.084045, -73.874256],
+          ['Edinburgh', 55.953848, -3.187799],
+          ['Singapore', 1.290270, 103.851959],
+          ['Vienna', 48.210033, 16.363449],
+          ['Zurich', 47.376015, 8.540490],
+          ['Munich', 48.135466, 11.567184],
+          ['Oslo', 59.914063, 10.746723],
+          ['Hong Kong', 22.302711, 114.177216],
+          ['Frankfurt', 50.110924, 8.682127],
+         ];   
+                   
+      
+     
+     var infowindow = new google.maps.InfoWindow();
+     
+     var marker, i;
+     
+      for (i = 0; i < locations.length; i++) {  
+       marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+      
+       google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        };
+      })(marker, i));
+    }
     
-          
-     /*Show markers */       
-    var labels = "ABCDEFGHIJKLMONPQRSTUVWXYZ";
-     
-          
-    var locations = [
-        {lat: 51.509865, lng: -0.118092},  /*London*/
-        {lat: 41.084045, lng: -73.874256},  /*Stockholm*/
-        {lat: 55.953848, lng: -3.187799},   /*Edinbugrh*/
-        {lat: 1.290270, lng: 103.851959},  /*Singapore*/
-        {lat: 48.210033, lng: 16.363449},  /*Vienna*/
-        {lat: 47.376015, lng: 8.540490},  /*Zurich*/
-        {lat: 48.135466, lng: 11.567184},  /*Munich*/
-        {lat: 59.914063, lng: 10.746723},  /*Oslo*/
-        {lat: 22.302711, lng: 114.177216},  /*Hong Kong*/
-        {lat: 50.110924, lng: 8.682127},  /*Frankfurt*/
-     ];
-     
-     /*create markers */
+   }     
+/*     /*create markers 
     var markers = new google.maps.Marker({
           position: {lat: 51.509865, lng: -0.118092},
           map: map,
           title: 'London'
-          });
+          }); */
           
   /*        var markers = locations.map(function(location, i) {   */
-        return new google.maps.Marker({
+   /*     return new google.maps.Marker({
             position: location,
             label: labels[i % labels.length]
         });
+        */
         
-        
+  
+  
+  
+  
+  
     /*    for (let i = 0; i < 10; i++);  */
         
-        for (var i = 0; i < labels.length; i++)
+   /*     for (var i = 0; i < labels.length; i++)
            
         
+
+   
+
         
   /*  });   */
   
@@ -82,7 +104,7 @@ function initMap() {
     query: 'organic'
   };
 
-  service = new google.maps.places.PlacesService(map);
+ var service = new google.maps.places.PlacesService(map);
   service.textSearch(request, callback);
 }
 
@@ -171,10 +193,8 @@ function callback(results, status) {
             
       /*  } */
       
-      
-       /*     var labels = "ABCDEFGHIJKLMONPQRSTUVWXYZ";
        
-       var markers = locations.map(function(location, i) {
+  /*     var markers = locations.map(function(location, i) {
           return new google.maps.Marker({
             position: location,
             label: labels[i % labels.length]
@@ -184,32 +204,26 @@ function callback(results, status) {
         var markerCluster = new MarkerClusterer(map, markers,
             {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
       }
+        */
         
-      var locations = [
-        {lat: 51.509865, lng: -0.118092}, /*London, how do I add the title to the marker? change the rest below to my own cities */
-        
-  /*      {lat: -31.563910, lng: 147.154312},
-        {lat: -33.718234, lng: 150.363181},
-        {lat: -33.727111, lng: 150.371124},
-        {lat: -33.848588, lng: 151.209834},
-        {lat: -33.851702, lng: 151.216968},
-        {lat: -34.671264, lng: 150.863657},
-        {lat: -35.304724, lng: 148.662905},
-        {lat: -36.817685, lng: 175.699196},
-        {lat: -36.828611, lng: 175.790222},
-        {lat: -37.750000, lng: 145.116667},
-        {lat: -37.759859, lng: 145.128708},
-        {lat: -37.765015, lng: 145.133858},
-        {lat: -37.770104, lng: 145.143299},
-        {lat: -37.773700, lng: 145.145187},
-        {lat: -37.774785, lng: 145.137978},
-        {lat: -37.819616, lng: 144.968119},
-        {lat: -38.330766, lng: 144.695692},
-        {lat: -39.927193, lng: 175.053218},
-        {lat: -41.330162, lng: 174.865694},
-        {lat: -42.734358, lng: 147.439506},
-        {lat: -42.734358, lng: 147.501315},
-        {lat: -42.735258, lng: 147.438000},
-        {lat: -43.999792, lng: 170.463352}
-      ]
-      */
+        /*    var locations = [
+        {lat: 51.509865, lng: -0.118092},  /*London*/
+ //       {lat: 41.084045, lng: -73.874256}, /* Stockholm*/
+ //       {lat: 55.953848, lng: -3.187799},   /*Edinbugrh*/
+  //      {lat: 1.290270, lng: 103.851959},  /*Singapore*/
+  //      {lat: 48.210033, lng: 16.363449},  /*Vienna*/
+ //       {lat: 47.376015, lng: 8.540490},  /*Zurich*/
+ //       {lat: 48.135466, lng: 11.567184},  /*Munich*/
+//        {lat: 59.914063, lng: 10.746723},  /*Oslo*/
+ //       {lat: 22.302711, lng: 114.177216},  /*Hong Kong*/
+  //      {lat: 50.110924, lng: 8.682127},  /*Frankfurt*/
+ //    ]; 
+ 
+ /*    function initMap() {
+        var myLatLng = new google.maps.LatLng(51.509865, -0.118092);  */
+
+   /*      var map = new google.maps.Map(document.getElementById('map'), {
+         zoom: 3,
+         center: new google.maps.LatLng(51.509865, -0.118092),
+         
+        }); */
