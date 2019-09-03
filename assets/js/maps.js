@@ -12,7 +12,7 @@
        var locations = [
           ['London', 51.509865, -0.118092],
           ['Stockholm', 59.330231, 18.068649], 
-          ['Edinburgh', 55.953848, -3.187799],
+          ['Edinburgh', 55.963333, -3.187392],
           ['Singapore', 1.290270, 103.851959],
           ['Vienna', 48.210033, 16.363449],
           ['Zurich', 47.376015, 8.540490],
@@ -21,6 +21,19 @@
           ['Hong Kong', 22.302711, 114.177216],
           ['Frankfurt', 50.110924, 8.682127],
          ];   
+         
+         
+         //Resets the map and all the input fields. look if I have missed some input fields here.. 
+function reset() {
+ clearResults();
+ $('#city')[0].selectedIndex = 0;
+ $('#results-heading').innerHTML("");
+ map.setZoom(2);
+ map.setCenter(45.878782, 15.983716);
+ place = "";
+
+}
+         
                    
      
      var infowindow = new google.maps.InfoWindow();
@@ -35,9 +48,11 @@
       });
       
       
-   /*   map.addListener('center_changed', function() {
+  /*    map.addListener('center_changed', function() {
             map.panTo(marker.getPosition());
-        });  */
+        }); */
+        
+       
       
 
       //zoom to 8 when click on the marker
