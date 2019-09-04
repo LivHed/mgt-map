@@ -1,7 +1,7 @@
 //init map. center set to Zagreb, zoomlevel to 3
    function initMap() {  
         var map = new google.maps.Map(document.getElementById('map'), {
-         zoom: 3,
+         zoom: 2,
          center: new google.maps.LatLng(45.878782, 15.983716), 
          mapTypeControl: false,
          mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -14,13 +14,13 @@
 Is this the right way to make one click function for each city?  */
 
 
- /*    google.maps.event.addListener(document.getElementById('london1'), 'click', function () {
+      google.maps.event.addListener(document.getElementById('london1'), 'click', function () {
       map.setCenter(new google.maps.LatLng(51.509865, -0.118092));
-      map.setZoom(8);
+      map.setZoom(9);
 });
-       google.maps.event.addListener(document.getElementById('stockholm1'), 'click', function () {
+   /*    google.maps.event.addListener(document.getElementById('stockholm2'), 'click', function () {
       map.setCenter(new google.maps.LatLng(59.330231, 18.068649));
-      map.setZoom(8);
+      map.setZoom(9);
        });
 }  */
 
@@ -31,6 +31,11 @@ Is this the right way to make one click function for each city?  */
      /*     map.addListener('center_changed', function() {
             map.panTo(marker.getPosition());
         });  */
+        
+   /*      map.addListener('center_changed', function() {
+         map.panTo(marker.getPosition());
+         map.setZoom(8);
+        });   */
 
        
        
@@ -58,24 +63,9 @@ Is this the right way to make one click function for each city?  */
         map: map
       });
       
-         
-         
-/*         //Resets the map and all the input fields. remember to look if I have missed some input fields here..it does not mwork at the moment.  
-function reset() {
- clearResults();
- $('#city')[0].selectedIndex = 0;
- $('#results-heading').innerHTML("");
- map.setZoom(3);
- map.setCenter(45.878782, 15.983716);
- place = "";
-}
-         */
-                   
-     
-    
-    
       
-// To show infowindow with the name of the city when clicked on the marker
+      
+      // To show infowindow with the name of the city when clicked on the marker
 
        google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
@@ -87,6 +77,26 @@ function reset() {
  
  
    }
+  
+   
+   
+   
+      
+         
+         
+/*         //Resets the map and all the input fields. remember to look if I have missed some input fields here..it does not mwork at the moment.  
+function reset() {
+ clearResults();
+ $('#city')[0].selectedIndex = 0;
+ $('#results-heading').innerHTML("");
+ map.setZoom(2);
+ map.setCenter(45.878782, 15.983716);
+ place = "";
+}
+         */
+                   
+     
+
  
  
  
