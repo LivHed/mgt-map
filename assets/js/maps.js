@@ -1,4 +1,4 @@
-//init map. center set to Zagreb, zoomlevel to 3
+//init map. center set to Zagreb
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 2,
@@ -20,8 +20,7 @@ function initMap() {
         'frankfurt': [50.110924, 8.682127]
     }
 
-    /* Trying to target id´s from html dropdown menu, when clicked on a city I want the map to zoom in on that city.. 
-    Is this the right way to make one click function for each city?  */
+    /* Target ciities for zoom in on them when clicked on in the dropdown menu  */
     var city = document.getElementById("city");
     city.addEventListener("change", function() {
         console.log(city.value)
@@ -37,7 +36,59 @@ function initMap() {
             map.setCenter(new google.maps.LatLng(locations.stockholm[0], locations.stockholm[1]));
             map.setZoom(9);
         }
+        
+        if (city.value == "edinburgh") {
+            console.log(locations.edinburgh);
+            map.setCenter(new google.maps.LatLng(locations.edinburgh[0], locations.edinburgh[1]));
+            map.setZoom(9);
+        }    
+        
+        if (city.value == "singapore") {
+            console.log(locations.singapore);
+            map.setCenter(new google.maps.LatLng(locations.singapore[0], locations.singapore[1]));
+            map.setZoom(9);
+        }
+        
+        if (city.value == "vienna") {
+            console.log(locations.vienna);
+            map.setCenter(new google.maps.LatLng(locations.vienna[0], locations.vienna[1]));
+            map.setZoom(9);
+        }
+        
+        if (city.value == "zurich") {
+            console.log(locations.zurich);
+            map.setCenter(new google.maps.LatLng(locations.zurich[0], locations.zurich[1]));
+            map.setZoom(9);
+        }
+        
+        if (city.value == "munich") {
+            console.log(locations.munich);
+            map.setCenter(new google.maps.LatLng(locations.munich[0], locations.munich[1]));
+            map.setZoom(9);
+        }
+        
+         if (city.value == "oslo") {
+            console.log(locations.oslo);
+            map.setCenter(new google.maps.LatLng(locations.oslo[0], locations.oslo[1]));
+            map.setZoom(9);
+        }
+        
+        if (city.value == "hongkong") {
+            console.log(locations.hongkong);
+            map.setCenter(new google.maps.LatLng(locations.hongkong[0], locations.hongkong[1]));
+            map.setZoom(9);
+        }
+        
+        if (city.value == "frankfurt") {
+            console.log(locations.frankfurt);
+            map.setCenter(new google.maps.LatLng(locations.frankfurt[0], locations.frankfurt[1]));
+            map.setZoom(9);
+        }
+        
     });
+
+
+
 
     var infowindow = new google.maps.InfoWindow();
     var marker, i;
