@@ -12,9 +12,9 @@ After doing research looking at websites with Google maps included, my goals wit
 2. To make one page webpage which provides a user friendly and easy layout to quick be able to understand what you can do and how on the website.
 
 ### User stories
-* 
-*
-*
+* As an environmentally conscious traveller I want to have a look at the range of places with a sustainable focus before I travel there, to get inspired and remember to keep the focus of those things I find most important in the society.
+* As a traveller that´s on a trip right now I would like to have a look at the supply of environmentally conscious places in the city while I´m on the run on my way to explore the city, and would like to pass by a couple of these places.
+* As a traveller with no special focus while travelling I would like to check this page out that has narrowed down the search, out of pure interest, to see what kind of places the environmentally conscious travellers usually visit, and maybe I pass by one of these places to see if it´s something that interests me.
 
 ### Wireframes
 The wireframes are created with Balsamiq. They where made as a part of the design process and are saved as pdf documents and kept in a separate folder, which is called **wireframe**. 
