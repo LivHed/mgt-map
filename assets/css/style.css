@@ -5,6 +5,29 @@ html, body {
         font-family: 'PT Sans', sans-serif;
       }
 
+
+/*text area-----------------------------------------*/
+
+.header-text {
+        font-weight: bolder;
+        
+}
+
+.intro-text {
+        font-weight: lighter;
+}
+
+
+
+/* select city menu-----------------------------------*/
+
+.input-boxes {
+        margin-bottom: 15px;
+}
+
+
+/*map area------------------------------------------- */
+
 #map {
         height: 100%;
         
@@ -18,27 +41,26 @@ html, body {
  div#map {min-height: 360px;}   /*using because of trouble with rendering the map, from video lesson 4 Google maps*/
 
 
-.header-text {
-        font-weight: bolder;
-        
-}
 
-.intro-text {
-        font-weight: lighter;
-}
+
+/* result area ------------------------------------------*/
 
 .result-heading {
         margin-top:15px;
 }
 
-.go-btn {
-        margin-bottom: 15px;
-}
-
-.clear-btn {
+.reset-btn {
         margin-top:15px;
 }
 
-.input-boxes {
+
+
+
+
+
+
+/*  .go-btn {
         margin-bottom: 15px;
-}
+}   */
+
+
