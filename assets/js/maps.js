@@ -1,5 +1,4 @@
-  
- //init map. center set to Zagreb, zoomlevel to 3
+//init map. center set to Zagreb, zoomlevel to 3
    function initMap() {  
         var map = new google.maps.Map(document.getElementById('map'), {
          zoom: 3,
@@ -7,6 +6,22 @@
          mapTypeControl: false,
          mapTypeId: google.maps.MapTypeId.ROADMAP
         });
+
+
+ /*    google.maps.event.addListener(document.getElementById('london1'), 'click', function () {
+      map.setCenter(new google.maps.LatLng(51.509865, -0.118092));
+      map.setZoom(8);
+});
+       google.maps.event.addListener(document.getElementById('stockholm1'), 'click', function () {
+      map.setCenter(new google.maps.LatLng(59.330231, 18.068649));
+       });
+}  */
+
+
+         
+     /*     map.addListener('center_changed', function() {
+            map.panTo(marker.getPosition());
+        });  */
 
        
        var locations = [
@@ -23,21 +38,19 @@
          ];   
          
          
-         //Resets the map and all the input fields. look if I have missed some input fields here.. 
+/*         //Resets the map and all the input fields. look if I have missed some input fields here.. 
 function reset() {
  clearResults();
  $('#city')[0].selectedIndex = 0;
  $('#results-heading').innerHTML("");
- map.setZoom(2);
+ map.setZoom(3);
  map.setCenter(45.878782, 15.983716);
  place = "";
-
 }
-         
+         */
                    
      
      var infowindow = new google.maps.InfoWindow();
-     
      var marker, i;
 
 // To loop through the locations    
@@ -47,19 +60,10 @@ function reset() {
         map: map
       });
       
-      
-  /*    map.addListener('center_changed', function() {
-            map.panTo(marker.getPosition());
-        }); */
         
-       
-      
 
-      //zoom to 8 when click on the marker
-        marker.addListener('click', function() {
-          map.setZoom(8);
-          map.setCenter(marker.getPosition());
-        });   
+    
+    
         
       
 // To show infowindow with the name of the city when clicked on    
@@ -71,12 +75,11 @@ function reset() {
       })(marker, i));
     }
  
-
  
  
  
 
-//Text search request          
+/*  //Text search request          
   var request = {
     location: 'London',
     radius: '500',
@@ -93,9 +96,8 @@ function callback(results, status) {
       var place = results[i];
       createMarker(results[i]);
     }
-  }
+  }     */
 
-}
 
 
 /* map.addListener('center_changed', function() {
@@ -130,7 +132,6 @@ function setAutocompleteCountry() {
 */
 
 
-}
 
 /*what I want to be returned in the PlaceResult (info window or in the list?) 
 formatted_adress 
@@ -171,5 +172,4 @@ function callback(results, status) {
     }
   }
 }
-}      
-*/
+}      */
