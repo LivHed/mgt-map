@@ -8,21 +8,31 @@
         });
 
 
+
+
+/* Trying to target id´s from html dropdown menu, when clicked on a city I want the map to zoom in on that city.. 
+Is this the right way to make one click function for each city?  */
+
+
  /*    google.maps.event.addListener(document.getElementById('london1'), 'click', function () {
       map.setCenter(new google.maps.LatLng(51.509865, -0.118092));
       map.setZoom(8);
 });
        google.maps.event.addListener(document.getElementById('stockholm1'), 'click', function () {
       map.setCenter(new google.maps.LatLng(59.330231, 18.068649));
+      map.setZoom(8);
        });
 }  */
 
 
+
+//Or is it better to do it this way? but what to add to be able to zoom in on the right city?
          
      /*     map.addListener('center_changed', function() {
             map.panTo(marker.getPosition());
         });  */
 
+       
        
        var locations = [
           ['London', 51.509865, -0.118092],
@@ -35,10 +45,22 @@
           ['Oslo', 59.914063, 10.746723],
           ['Hong Kong', 22.302711, 114.177216],
           ['Frankfurt', 50.110924, 8.682127],
-         ];   
+         ];  
          
          
-/*         //Resets the map and all the input fields. look if I have missed some input fields here.. 
+          var infowindow = new google.maps.InfoWindow();
+          var marker, i;
+
+// To loop through the locations    
+      for (i = 0; i < locations.length; i++) {  
+       marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+      
+         
+         
+/*         //Resets the map and all the input fields. remember to look if I have missed some input fields here..it does not mwork at the moment.  
 function reset() {
  clearResults();
  $('#city')[0].selectedIndex = 0;
@@ -50,23 +72,11 @@ function reset() {
          */
                    
      
-     var infowindow = new google.maps.InfoWindow();
-     var marker, i;
-
-// To loop through the locations    
-      for (i = 0; i < locations.length; i++) {  
-       marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        map: map
-      });
-      
-        
-
     
     
-        
       
-// To show infowindow with the name of the city when clicked on    
+// To show infowindow with the name of the city when clicked on the marker
+
        google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
           infowindow.setContent(locations[i][0]);
@@ -76,8 +86,11 @@ function reset() {
     }
  
  
+   }
  
  
+ 
+// Use this if I want a Text search function with pre chosen words in a list.  
 
 /*  //Text search request          
   var request = {
@@ -97,6 +110,8 @@ function callback(results, status) {
       createMarker(results[i]);
     }
   }     */
+
+
 
 
 
