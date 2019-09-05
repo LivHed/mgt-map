@@ -1,16 +1,17 @@
-html, body {
+html,
+body {
         height: 100%;
         margin: 0;
         padding: 0;
         font-family: 'PT Sans', sans-serif;
-      }
+}
 
 
 /*text area-----------------------------------------*/
 
 .header-text {
         font-weight: bolder;
-        
+
 }
 
 .intro-text {
@@ -31,36 +32,51 @@ html, body {
 #map {
         height: 100%;
         min-height: 415px;
-      }
-      
-#map-area {
-      width: auto; 
-}      
-      
-      
-/* div#map {min-height: 415px;}   /*using because of trouble with rendering the map, from video lesson 4 Google maps*/
+}
 
+#map-area {
+        width: auto;
+}
 
 
 
 /* result area ------------------------------------------*/
 
-.result-heading {
-        margin-top:15px;
+
+#listing {
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-bottom: 25px;
 }
 
-.reset-btn {
-        margin-top:15px;
+#resultsTable {
+    border-collapse: collapse;
+    width: 100%;
+    
+    #rating {
+    font-size: 13px;
+    font-family: Arial Unicode MS;
 }
 
+.iw_table_row {
+    height: 18px;
+}
 
+.iw_attribute_name {
+    font-weight: bold;
+    text-align: right;
+}
 
+.iw_table_icon {
+    text-align: right;
+}
 
+ /*       .result-heading {
+                margin-top: 15px;
+        }
+*/
 
-
-
-/*  .go-btn {
-        margin-bottom: 15px;
-}   */
-
+        .reset-btn {
+                margin-top: 15px;
+        }
 
