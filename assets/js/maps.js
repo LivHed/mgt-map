@@ -1,3 +1,7 @@
+var places, infoWindow;
+    var markers = [];
+    var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
+
 //init map. center set to Zagreb
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -5,7 +9,6 @@ function initMap() {
         center: new google.maps.LatLng(45.878782, 15.983716),
         mapTypeControl: false,
         mapTypeId: google.maps.MapTypeId.ROADMAP
-        
     });
 
     var locations = {
@@ -89,13 +92,13 @@ function initMap() {
     });
     
 
-/*    var infowindow = new google.maps.InfoWindow();
+ /*   var infowindow = new google.maps.InfoWindow();
     var marker, i;
 
     // To loop through the locations    
     for (i = 0; i < locations.length; i++) {
         marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            position: new google.maps.LatLng(locations[i][0], locations[i][1]),
             map: map
         });
 
@@ -110,7 +113,11 @@ function initMap() {
     */
     
     
-    var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
+    
+    infoWindow = new google.maps.InfoWindow({
+          content: document.getElementById('info-content')
+        });
+    
     
     // Search for hotels in the selected city, within the viewport of the map.
       function search() {
