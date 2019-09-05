@@ -27,6 +27,14 @@ body {
 }
 
 
+/* radio buttons area-----------------------------------*/
+
+#buttons-area {
+    margin-bottom: 15px;
+}
+
+
+
 /*map area------------------------------------------- */
 
 #map {
@@ -42,6 +50,10 @@ body {
 
 /* result area ------------------------------------------*/
 
+#results-heading {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
 
 #listing {
     margin-right: 50px;
