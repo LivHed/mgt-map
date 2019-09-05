@@ -41,31 +41,31 @@ function initMap() {
         if (city.value == "edinburgh") {
             console.log(locations.edinburgh);
             map.setCenter(new google.maps.LatLng(locations.edinburgh[0], locations.edinburgh[1]));
-            map.setZoom(10);
+            map.setZoom(11);
         }    
         
         if (city.value == "singapore") {
             console.log(locations.singapore);
             map.setCenter(new google.maps.LatLng(locations.singapore[0], locations.singapore[1]));
-            map.setZoom(10);
+            map.setZoom(11);
         }
         
         if (city.value == "vienna") {
             console.log(locations.vienna);
             map.setCenter(new google.maps.LatLng(locations.vienna[0], locations.vienna[1]));
-            map.setZoom(10);
+            map.setZoom(11);
         }
         
         if (city.value == "zurich") {
             console.log(locations.zurich);
             map.setCenter(new google.maps.LatLng(locations.zurich[0], locations.zurich[1]));
-            map.setZoom(10);
+            map.setZoom(11);
         }
         
         if (city.value == "munich") {
             console.log(locations.munich);
             map.setCenter(new google.maps.LatLng(locations.munich[0], locations.munich[1]));
-            map.setZoom(10);
+            map.setZoom(11);
         }
         
          if (city.value == "oslo") {
@@ -89,7 +89,7 @@ function initMap() {
     });
     
 
-    var infowindow = new google.maps.InfoWindow();
+/*    var infowindow = new google.maps.InfoWindow();
     var marker, i;
 
     // To loop through the locations    
@@ -107,6 +107,7 @@ function initMap() {
             };
         })(marker, i));
     }
+    */
     
     
     var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
