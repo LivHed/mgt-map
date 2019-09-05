@@ -19,12 +19,12 @@ function initMap() {
         'oslo': [59.914063, 10.746723],
         'hongkong': [22.302711, 114.177216],
         'frankfurt': [50.110924, 8.682127]
-    }
+    };
 
     /* Target cities to zoom in on them when clicked on, in the dropdown menu  */
     var city = document.getElementById("city");
     city.addEventListener("change", function() {
-        console.log(city.value)
+        console.log(city.value);
 
         if (city.value == "london") {
             console.log(locations.london);
