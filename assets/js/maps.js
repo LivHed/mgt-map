@@ -1,6 +1,6 @@
-var places, infoWindow;
+var places, search, infoWindow;
     var markers = [];
-    var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
+    var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'; //change beachflag later
 
 //init map. center set to Zagreb
 function initMap() {
@@ -92,7 +92,34 @@ function initMap() {
     });
     
 
- /*   var infowindow = new google.maps.InfoWindow();
+// This code works!! adjust it to my needs
+
+/* const accommodation = document.getElementById('accommodationRadio'); 
+
+// Add a handler for the 'click' event by providing a callback function.
+// Whenever the element is clicked, a pop-up with "Element clicked!" will
+// appear.
+
+accommodation.addEventListener('click', function (event) {
+  alert('Element clicked through function!');
+});  */
+
+
+const accommodationRadio = document.getElementById('accommodationRadio');
+   accommodationRadio.addEventListener('click', function (search) {
+  console.log('accommodation');
+  
+   search = {
+          bounds: map.getBounds(),
+          types: ['lodging']
+        };
+  
+});
+
+
+/*
+//maybe not needed, since I now have the code below..with infoWindow example from google maps api doc
+    var infowindow = new google.maps.InfoWindow();
     var marker, i;
 
     // To loop through the locations    
@@ -114,21 +141,23 @@ function initMap() {
     
     
     
+    
+    
       
-    infoWindow = new google.maps.InfoWindow({
+/*     infoWindow = new google.maps.InfoWindow({
           content: document.getElementById('info-content')
         });
-        
+        */
     
-    
+/*    
  //where is this supposed to be located? inside another function, or is this supposed to wrap some code? is search the right var here or should I write something else here? marker?         
      var search = document.getElementById('accommodation');
-        search.getElementById('accomodationRadio').addEventListener('click', function() {
+        search.getElementById('accomodationRadio').addEventListener('click', function() {   */
             
             
-            // Search for hotels in the selected city, within the viewport of the map.
+ /*           // Search for hotels in the selected city, within the viewport of the map.
       function search() {
-        var search = {
+          search = {
           bounds: map.getBounds(),
           types: ['lodging']
         };
@@ -144,16 +173,18 @@ function initMap() {
             for (var i = 0; i < results.length; i++) {
               var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
               var markerIcon = MARKER_PATH + markerLetter + '.png';
+              */
               
-              // Use marker animation to drop the icons incrementally on the map.
+ /*             // Use marker animation to drop the icons incrementally on the map.
               markers[i] = new google.maps.Marker({
                 position: results[i].geometry.location,
                 animation: google.maps.Animation.DROP,
                 icon: markerIcon
-              });
+              });     */
+              
               // If the user clicks a hotel marker, show the details of that hotel
               // in an info window.
-              markers[i].placeResult = results[i];
+/*              markers[i].placeResult = results[i];
               google.maps.event.addListener(markers[i], 'click', showInfoWindow);
               setTimeout(dropMarker(i), i * 100);
               addResult(results[i], i);
@@ -169,10 +200,11 @@ function initMap() {
           }
         }
         markers = [];
-      }
+      }   
     
+    */
     
-    function addResult(result, i) {
+/*    function addResult(result, i) {
         var results = document.getElementById('results');
         var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
         var markerIcon = MARKER_PATH + markerLetter + '.png';
@@ -203,7 +235,9 @@ function initMap() {
           results.removeChild(results.childNodes[0]);
         }
       }
+*/
 
+/*
  // Get the place details for a hotel. Show the information in an info window,
       // anchored on the marker for the hotel that the user selected.
       function showInfoWindow() {
@@ -216,8 +250,9 @@ function initMap() {
               infoWindow.open(map, marker);
               buildIWContent(place);
             });
-      }
+      }   */
 
+/*
       // Load the place information into the HTML elements used by the info window.
       function buildIWContent(place) {
         document.getElementById('iw-icon').innerHTML = '<img class="hotelIcon" ' +
@@ -232,6 +267,7 @@ function initMap() {
               place.formatted_phone_number;
         } else {
           document.getElementById('iw-phone-row').style.display = 'none';
-        }
-}
-}
+        }    */
+}   
+
+
