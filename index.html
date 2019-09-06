@@ -55,7 +55,8 @@
       <form action="">
         <div class="custom-control custom-radio custom-control-inline">
           <input type="radio" class="custom-control-input" id="accommodationRadio" name="gender" value="accommodation">
-          <label class="custom-control-label" for="accommodationRadio">Accommodations</label>
+          <label class="custom-control-label" for="accommodationRadio" onclick="search()">Accommodations</label> 
+     <!--     <button onclick="search()">Search</button> -->
         </div>
         <div class="custom-control custom-radio custom-control-inline">
           <input type="radio" class="custom-control-input" id="restaurantRadio" name="gender" value="restaurants">
@@ -185,7 +186,7 @@
             </div>
 
     <div class="col-md-12">
-      <button id="reset-button" type="button" class="btn btn-info" onclick="reset()">Reset</button>
+      <button id="reset-btn" type="button" class="btn btn-info" onclick="reset()">Reset</button>
     </div>
 
   </section>
