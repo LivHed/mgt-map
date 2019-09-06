@@ -46,8 +46,9 @@ One is designed for desktop view and the other for mobile view. [Check them out 
 * **The libraries** included are the Javascript libraries [JQuery](https://jquery.com/) and [Popper.js](https://popper.js.org/). And also [Fontawesome](https://fontawesome.com/) to add icons.
 * **Frameworks** I have used is Bootstrap 4.3.1. I used the BootstrapCDN on [this page](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
 * **Other tools** I have used are [Cloud9 IDE](https://aws.amazon.com/cloud9/?origin=c9io) for the development of this site: writing, debugging and running my code. GIT was then used to push files to [Github](http://github.com) where the project is stored and deployed.
-* **Google maps API** was used to 
+* I used **Google maps** [Maps Javascrip API](https://developers.google.com/maps/documentation/javascript/tutorial) for the map function on the page.
 * As part of the **design process** i chose to use [Balsamic](https://balsamiq.com/) to make my wireframes in a simple way with a goodlooking result.
+* I used [Responsinator](http://www.responsinator.com/) to check the **responsiveness** of the page. 
 -------------------------------------------------------------------------------------------------------------------
 ## Testing
 Here I present how my website meet the needs of the different kinds of users that will visit the site, which I presented in the section UX: User stories:
