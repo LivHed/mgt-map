@@ -113,17 +113,20 @@ function initMap() {
     */
     
     
- //where is this supposed to be located? inside another function, or is this supposed to wrap some code? is search the right var here or should I write something else here? marker?         
-     var search = document.getElementById('accommodation');
-        search.getElementById('accomodationRadio').addEventListener('click', search, accommodation);
     
-    
+      
     infoWindow = new google.maps.InfoWindow({
           content: document.getElementById('info-content')
         });
+        
     
     
-    // Search for hotels in the selected city, within the viewport of the map.
+ //where is this supposed to be located? inside another function, or is this supposed to wrap some code? is search the right var here or should I write something else here? marker?         
+     var search = document.getElementById('accommodation');
+        search.getElementById('accomodationRadio').addEventListener('click', function() {
+            
+            
+            // Search for hotels in the selected city, within the viewport of the map.
       function search() {
         var search = {
           bounds: map.getBounds(),
@@ -134,8 +137,7 @@ function initMap() {
           if (status === google.maps.places.PlacesServiceStatus.OK) {
             clearResults();
             clearMarkers();
-            
-           
+    
             
             // Create a marker for each hotel found, and
             // assign a letter of the alphabetic to each marker icon.
