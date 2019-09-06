@@ -106,14 +106,38 @@ accommodation.addEventListener('click', function (event) {
 
 
 const accommodationRadio = document.getElementById('accommodationRadio');
-   accommodationRadio.addEventListener('click', function (search) {
+   accommodationRadio.addEventListener('click', function (event) {
   console.log('accommodation');
   
+  function search() {
    search = {
           bounds: map.getBounds(),
           types: ['lodging']
         };
+        
+         places.nearbySearch(search, function(results, status) {
+          if (status === google.maps.places.PlacesServiceStatus.OK) {
+            clearResults();
+            clearMarkers();
+    
+            
+            // Create a marker for each hotel found, and
+            // assign a letter of the alphabetic to each marker icon.
+            for (var i = 0; i < results.length; i++) {
+              var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
+              var markerIcon = MARKER_PATH + markerLetter + '.png';
+              
+              // If the user clicks a hotel marker, show the details of that hotel
+              // in an info window.
+              markers[i].placeResult = results[i];
+              google.maps.event.addListener(markers[i], 'click', showInfoWindow);
+              setTimeout(dropMarker(i), i * 100);
+              addResult(results[i], i);
+            }
+          }
   
+});
+}
 });
 
 
@@ -268,6 +292,4 @@ const accommodationRadio = document.getElementById('accommodationRadio');
         } else {
           document.getElementById('iw-phone-row').style.display = 'none';
         }    */
-}   
-
-
+ } 
