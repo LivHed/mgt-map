@@ -115,7 +115,7 @@ accommodation.addEventListener('click', function (event) {
 
 
 const accommodationRadio = document.getElementById('accommodationRadio');
-   accommodationRadio.addEventListener('click', function (event) {
+   accommodationRadio.addEventListener('click', function (search) {
   console.log('accommodation');
   
   // Search for hotels in the selected city, within the viewport of the map.
