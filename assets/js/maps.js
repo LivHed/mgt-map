@@ -127,8 +127,8 @@ accommodation.addEventListener('click', function (event) {
 
 //How do I run my search function?  
 function searchPlaces () {
-    var place = search.getPlace();
-    if (place.geometry) {
+    var place = search.onclick();
+    if (place.searchHotels) {
     search();
     }
     else {
@@ -140,6 +140,7 @@ var accommodationRadio = document.getElementById('accommodationRadio');
   
    });
     }
+}
   
   // Search for hotels in the selected city, within the viewport of the map.
   function search() {
@@ -281,4 +282,3 @@ function clearMarkers() {
           document.getElementById('iw-phone-row').style.display = 'none';
         }    
  } 
-}
