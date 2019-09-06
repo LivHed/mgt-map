@@ -112,15 +112,38 @@ accommodation.addEventListener('click', function (event) {
   alert('Element clicked through function!');
 });  */
 
+ // When the user selects a city, get the place details for the city and
+      // zoom the map in on the city.
+/*      function onPlaceChanged() {
+        var place = autocomplete.getPlace();
+        if (place.geometry) {
+          map.panTo(place.geometry.location);
+          map.setZoom(15);
+          search();
+        } else {
+          document.getElementById('autocomplete').placeholder = 'Enter a city';
+        }
+      }   */
+
+//How do I run my search function?  
+function searchPlaces () {
+    var place = search.getPlace();
+    if (place.geometry) {
+    search();
+    }
+    else {
 
 
-const accommodationRadio = document.getElementById('accommodationRadio');
+var accommodationRadio = document.getElementById('accommodationRadio');
    accommodationRadio.addEventListener('click', function (search) {
   console.log('accommodation');
   
+   });
+    }
+  
   // Search for hotels in the selected city, within the viewport of the map.
   function search() {
-   search = {
+   var search = {
           bounds: map.getBounds(),
           types: ['lodging']
         };
@@ -129,6 +152,7 @@ const accommodationRadio = document.getElementById('accommodationRadio');
           if (status === google.maps.places.PlacesServiceStatus.OK) {
             clearResults();
             clearMarkers();
+            
             
             // Create a marker for each hotel found, and
             // assign a letter of the alphabetic to each marker icon.
@@ -164,7 +188,7 @@ function clearMarkers() {
         }
         markers = [];
       } 
-});
+}
 
 
 
