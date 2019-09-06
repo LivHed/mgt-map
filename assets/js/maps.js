@@ -92,7 +92,15 @@ function initMap() {
     });
     
 
-// This code works!! adjust it to my needs
+
+ infoWindow = new google.maps.InfoWindow({
+          content: document.getElementById('info-content')
+        });
+        
+
+
+
+// This code snippet works! adjust it to my needs below
 
 /* const accommodation = document.getElementById('accommodationRadio'); 
 
@@ -105,10 +113,12 @@ accommodation.addEventListener('click', function (event) {
 });  */
 
 
+
 const accommodationRadio = document.getElementById('accommodationRadio');
    accommodationRadio.addEventListener('click', function (event) {
   console.log('accommodation');
   
+  // Search for hotels in the selected city, within the viewport of the map.
   function search() {
    search = {
           bounds: map.getBounds(),
@@ -119,13 +129,19 @@ const accommodationRadio = document.getElementById('accommodationRadio');
           if (status === google.maps.places.PlacesServiceStatus.OK) {
             clearResults();
             clearMarkers();
-    
             
             // Create a marker for each hotel found, and
             // assign a letter of the alphabetic to each marker icon.
             for (var i = 0; i < results.length; i++) {
               var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
               var markerIcon = MARKER_PATH + markerLetter + '.png';
+              
+               // Use marker animation to drop the icons incrementally on the map.
+              markers[i] = new google.maps.Marker({
+                position: results[i].geometry.location,
+                animation: google.maps.Animation.DROP,
+                icon: markerIcon
+              });
               
               // If the user clicks a hotel marker, show the details of that hotel
               // in an info window.
@@ -138,11 +154,22 @@ const accommodationRadio = document.getElementById('accommodationRadio');
   
 });
 }
+
+
+function clearMarkers() {
+        for (var i = 0; i < markers.length; i++) {
+          if (markers[i]) {
+            markers[i].setMap(null);
+          }
+        }
+        markers = [];
+      } 
 });
 
 
+
 /*
-//maybe not needed, since I now have the code below..with infoWindow example from google maps api doc
+//maybe not needed, since I now have the code with infoWindow example from google maps api doc
     var infowindow = new google.maps.InfoWindow();
     var marker, i;
 
@@ -165,70 +192,7 @@ const accommodationRadio = document.getElementById('accommodationRadio');
     
     
     
-    
-    
-      
-/*     infoWindow = new google.maps.InfoWindow({
-          content: document.getElementById('info-content')
-        });
-        */
-    
-/*    
- //where is this supposed to be located? inside another function, or is this supposed to wrap some code? is search the right var here or should I write something else here? marker?         
-     var search = document.getElementById('accommodation');
-        search.getElementById('accomodationRadio').addEventListener('click', function() {   */
-            
-            
- /*           // Search for hotels in the selected city, within the viewport of the map.
-      function search() {
-          search = {
-          bounds: map.getBounds(),
-          types: ['lodging']
-        };
-
-        places.nearbySearch(search, function(results, status) {
-          if (status === google.maps.places.PlacesServiceStatus.OK) {
-            clearResults();
-            clearMarkers();
-    
-            
-            // Create a marker for each hotel found, and
-            // assign a letter of the alphabetic to each marker icon.
-            for (var i = 0; i < results.length; i++) {
-              var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
-              var markerIcon = MARKER_PATH + markerLetter + '.png';
-              */
-              
- /*             // Use marker animation to drop the icons incrementally on the map.
-              markers[i] = new google.maps.Marker({
-                position: results[i].geometry.location,
-                animation: google.maps.Animation.DROP,
-                icon: markerIcon
-              });     */
-              
-              // If the user clicks a hotel marker, show the details of that hotel
-              // in an info window.
-/*              markers[i].placeResult = results[i];
-              google.maps.event.addListener(markers[i], 'click', showInfoWindow);
-              setTimeout(dropMarker(i), i * 100);
-              addResult(results[i], i);
-            }
-          }
-        });
-      }
-      
-    function clearMarkers() {
-        for (var i = 0; i < markers.length; i++) {
-          if (markers[i]) {
-            markers[i].setMap(null);
-          }
-        }
-        markers = [];
-      }   
-    
-    */
-    
-/*    function addResult(result, i) {
+     function addResult(result, i) {
         var results = document.getElementById('results');
         var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
         var markerIcon = MARKER_PATH + markerLetter + '.png';
@@ -259,9 +223,9 @@ const accommodationRadio = document.getElementById('accommodationRadio');
           results.removeChild(results.childNodes[0]);
         }
       }
-*/
 
-/*
+
+
  // Get the place details for a hotel. Show the information in an info window,
       // anchored on the marker for the hotel that the user selected.
       function showInfoWindow() {
@@ -274,9 +238,9 @@ const accommodationRadio = document.getElementById('accommodationRadio');
               infoWindow.open(map, marker);
               buildIWContent(place);
             });
-      }   */
+      }   
 
-/*
+
       // Load the place information into the HTML elements used by the info window.
       function buildIWContent(place) {
         document.getElementById('iw-icon').innerHTML = '<img class="hotelIcon" ' +
@@ -291,5 +255,6 @@ const accommodationRadio = document.getElementById('accommodationRadio');
               place.formatted_phone_number;
         } else {
           document.getElementById('iw-phone-row').style.display = 'none';
-        }    */
+        }    
  } 
+}
