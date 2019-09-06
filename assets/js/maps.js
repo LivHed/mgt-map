@@ -127,7 +127,7 @@ accommodation.addEventListener('click', function (event) {
 
 //How do I run my search function?  
 function searchPlaces () {
-    var place = search.onclick();
+    var place = accomodationRadio.onclick(searchPlaces);
     if (place.searchHotels) {
     search();
     }
