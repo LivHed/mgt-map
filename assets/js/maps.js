@@ -1,4 +1,4 @@
-var places, search, infoWindow;
+
     var markers = [];
     var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'; //change beachflag later
 
@@ -93,7 +93,7 @@ function initMap() {
     
 
 
- infoWindow = new google.maps.InfoWindow({
+ var infoWindow = new google.maps.InfoWindow({
           content: document.getElementById('info-content')
         });
         
@@ -112,35 +112,28 @@ accommodation.addEventListener('click', function (event) {
   alert('Element clicked through function!');
 });  */
 
- // When the user selects a city, get the place details for the city and
-      // zoom the map in on the city.
-/*      function onPlaceChanged() {
-        var place = autocomplete.getPlace();
-        if (place.geometry) {
-          map.panTo(place.geometry.location);
-          map.setZoom(15);
-          search();
-        } else {
-          document.getElementById('autocomplete').placeholder = 'Enter a city';
+
+      
+      
+      var places = document.getElementById("searchPlaces");
+    places.addEventListener("click", function() {
+        console.log(places.value);
+        
+
+        if (places.value == "accommodation") {
+            console.log(search.accommodation);
+            search(new google.maps.locations(search.accommodationRadio));
+            
+            
         }
-      }   */
-
-//How do I run my search function?  
-function searchPlaces () {
-    var place = accomodationRadio.onclick(searchPlaces);
-    if (place.searchHotels) {
-    search();
-    }
-    else {
-
-
-var accommodationRadio = document.getElementById('accommodationRadio');
-   accommodationRadio.addEventListener('click', function (search) {
-  console.log('accommodation');
-  
-   });
-    }
-}
+        
+        if (places.value == "restaurants") {
+            console.log(search.restaurants);
+            search(new google.maps.getBounds(search.restaurantRadio));
+        }
+        
+        
+        
   
   // Search for hotels in the selected city, within the viewport of the map.
   function search() {
@@ -189,7 +182,9 @@ function clearMarkers() {
         }
         markers = [];
       } 
-}
+});
+
+
 
 
 
@@ -214,6 +209,8 @@ function clearMarkers() {
         })(marker, i));
     }
     */
+    
+    
     
     
     
@@ -281,4 +278,5 @@ function clearMarkers() {
         } else {
           document.getElementById('iw-phone-row').style.display = 'none';
         }    
- } 
+      }
+}
