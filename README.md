@@ -62,29 +62,27 @@ Here I present how my website meet the needs of the different kinds of users tha
 #### Validation of code
 * I used [this website](https://validator.w3.org/#validate_by_input) to validate my HTML by direct input.
 * I used [this website](https://jigsaw.w3.org/css-validator/validator.html.en#validate_by_input) to validate my CSS by direct input.
-* I used ... to validate my Javascript code. 
+* I used [JS Hint](https://jshint.com/) to check my Javascript code for errors and potential problems.
 
 #### The responsive parts of the website
-* * The webpage is responsive since I´m using Bootstrap 4 and works good on smaller devices too.
-* The search fields 
-* The map 
-* The result list
-* The Clear button
+* The webpage is responsive since I´m using Bootstrap 4 and it works good on smaller devices too. The dropdown menu, the radiobuttons, the map and resultlist is placed inside of responsive columns.
+* The title of the page is inside of a navbar, which is responsive by default.
+* The Clear button responds when it´s clicked and clear the results. 
 
 #### Testing process scenarios 
-1. **Click the Clear button** 
+1. **Zoom in on cities wheen choosing a city in the dropdown menu**
 * 
 * (look at my first projects testing processes for inspo)
 
-2. **Choose a city from the list in the search field**
+2. **Click on each radiobutton for every city**
 * 
 *
 
-3. **Choose a word from the list in the other search field**
+3. **Click on the markers shown on the screen to see the info window **
 * 
 *
 
-4. **Zoom in on specific places where the markers are placed**
+4. **Click the Clear button** 
 * 
 *
 
@@ -114,7 +112,8 @@ The landing page must be named index.html for the site to deploy correctly on Gi
 
 
 ### Media
-The background picture used in this site was obtained from..
+* The background picture used in this site was obtained from..
+* The cities are an inspiration from [Arcadis homepage](https://www.arcadis.com/en/global/our-perspectives/sustainable-cities-index-2018/citizen-centric-cities/#compare?c1=London), and the listed top 10 most sustainable cities according to the Sustainable City Index. 
 
 ### Acknowledgements
 E.g 
