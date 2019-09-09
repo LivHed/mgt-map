@@ -95,21 +95,25 @@ function initMap() {
     var infoWindow = new google.maps.InfoWindow({
         content: document.getElementById('info-content')
     });
+    
 
 
+//Target accommodations and restaurants with the name SearchBy to check if it´s true when clicked on. 
     var places = document.getElementById("searchPlaces");
     places.addEventListener("click", function() {
-        console.log(places.value); // console says "undefined, on line 120"
 
+        var accommodation = document.getElementsByName("searchBy")[0].checked;
+        
+        var restaurants = document.getElementsByName("searchBy")[1].checked;
 
-        if (places.value == "accommodation") {
+        if (accommodation) {
             console.log(search.accommodation);
-            search(new google.maps.locations(search.accommodationRadio)); //one example 
+            search(new google.maps.locations(search.accommodationRadio));
         }
 
-        if (places.value == "restaurants") {
+        if (restaurants ) {
             console.log(types.restaurants);
-            search(new google.maps.places(types.accommodationRadio['lodging'])); //another example How should I define this row?
+            search(new google.maps.places(types.restaurantRadio['lodging'])); 
         }
 
 

@@ -51,17 +51,19 @@
     </div>
 
     <!--Radio buttons example from W3Schools, for finding places in the cities-->
-    <div class="col-md-12 radio-form text-center" id="buttons-area">
+    <div class="col-md-12 radio-form text-center" id="searchPlaces">
       <form>
         <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" class="custom-control-input" id="accommodationRadio" name="gender" value="accommodation">
-          <label class="custom-control-label" for="accommodationRadio" onclick="searchPlaces()">Accommodations</label> 
-     <!--     <button onclick="search()">Search</button> -->
+          <input type="radio" class="custom-control-input" id="accommodationRadio" name="searchBy" value="accommodation">
+          <label class="custom-control-label" for="accommodationRadio">Accommodations</label> 
+    
         </div>
         <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" class="custom-control-input" id="restaurantRadio" name="gender" value="restaurants">
+          <input type="radio" class="custom-control-input" id="restaurantRadio" name="searchBy" value="restaurants">
           <label class="custom-control-label" for="restaurantRadio">Restaurants</label>
         </div>
+     <!--   <button onclick="search()">Search</button>  --> 
+     
       </form>
     </div>
 
