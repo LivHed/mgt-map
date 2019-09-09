@@ -99,10 +99,12 @@ function initMap() {
     });   
     
 
- // When the user selects a city(restaurants or accommodation in my case), get the place details for the city and
-      // zoom the map in on the city. this is from autocomplete-example from google maps api doc, how do I change this to my needs?
-      //my needs is that when clicking on a radiobutton the search function will be called and the places(restaurants or accommodations) 
-      //will show with markers on the map, within the viewport. And hopefully show in the table-list below the map.
+ // When the user selects a city that have been zoomed in to, as the code above works for, I click one of the radiobuttons(for restaurants or accommodation in my case),
+ // and with this code below hopefully when clicking on a radiobutton the search function will be called and the places(restaurants or accommodations) 
+ //will show with markers on the map, within the viewport. And hopefully show in the table-list below the map. 
+ // this is a code-snippet from the autocomplete-example from google maps api doc, already slightly modified. 
+ // how do I change the autocomplete to my needs? and how do I call the search fucntion?
+
       function onPlaceChanged() {
         var place = search.getPlace();
         if (place.geometry) {
