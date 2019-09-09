@@ -1,9 +1,10 @@
 var markers = [];
 var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'; //change beachflag later
+var map;
 
 //init map. center set to Zagreb
 function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
+      map = new google.maps.Map(document.getElementById('map'), {
         zoom: 2,
         center: new google.maps.LatLng(45.878782, 15.983716),
         mapTypeControl: false,
@@ -92,10 +93,12 @@ function initMap() {
 
 
 
-    var infoWindow = new google.maps.InfoWindow({
+
+ /*   var infoWindow = new google.maps.InfoWindow({
         content: document.getElementById('info-content')
-    });
+    });   */
     
+
 
 
 //Target accommodations and restaurants with the name SearchBy to check if it´s true when clicked on. 
@@ -107,31 +110,92 @@ function initMap() {
         var restaurants = document.getElementsByName("searchBy")[1].checked;
 
         if (accommodation) {
-            console.log(search.accommodation);
-            search(new google.maps.locations(search.accommodationRadio));
+            console.log(places.checked);
+            search = new google.maps.LatLng('lodging');
         }
 
         if (restaurants ) {
-            console.log(types.restaurants);
-            search(new google.maps.places(types.restaurantRadio['lodging'])); 
+            console.log(places.checked);
+            search = new google.maps.LatLng('restaurant');
         }
+    });
 
 
-        // Search for hotels in the selected city, within the viewport of the map.
-        function search() {
+        // Search for hotels and restaurants in the selected cities.
+         function searchHotels() {
+            var search = {
+                location: 'city',
+                radius: 5000,
+                types: ['lodging']
+            }; 
+            
+             function searchReastaurants () {
+            var search = {
+                location: 'city',
+                radius: 5000,
+                types: ['restaurant']
+            }; 
+              
+              
+                         
+            infowindow = new google.maps.InfoWindow();
+            places = new google.maps.places.PlacesService(map);
+            places.nearbySearch(request, callback); 
+                 
+             }  
+         }
+             
+             function callback(results, status) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      var place = results[i];
+      createMarker(results[i]);
+    }
+  }
+
+
+
+
+     /*       places.nearbySearch(search, function(results, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    clearResults();
+                    clearMarkers();    
+                }  
+                });
+            }
+    }
+*/
+
+/*  function searchHotels() {
             var search = {
                 bounds: map.getBounds(),
                 types: ['lodging']
-            };
+            }; 
 
             places.nearbySearch(search, function(results, status) {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
                     clearResults();
-                    clearMarkers();
+                    clearMarkers();    */
+
+/*var request = {
+    location: locations,
+    radius: '500',
+    type: ['lodging']
+  }; */
+
+/* var request = {
+    location: london,
+    type: ['lodging']
+  };   */
 
 
 
-                    // Create a marker for each hotel found, and
+
+
+
+
+
+ /*                   // Create a marker for each hotel found, and
                     // assign a letter of the alphabetic to each marker icon.
                     for (var i = 0; i < results.length; i++) {
                         var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
@@ -155,9 +219,9 @@ function initMap() {
 
             });
         }
+*/
 
-
-        function clearMarkers() {
+ /*       function clearMarkers() {
             for (var i = 0; i < markers.length; i++) {
                 if (markers[i]) {
                     markers[i].setMap(null);
@@ -167,7 +231,7 @@ function initMap() {
         }
     });
 
-
+*/
 
 
 
@@ -195,7 +259,7 @@ function initMap() {
 
 
 
-    function addResult(result, i) {
+/*    function addResult(result, i) {
         var results = document.getElementById('results');
         var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
         var markerIcon = MARKER_PATH + markerLetter + '.png';
@@ -218,20 +282,20 @@ function initMap() {
         tr.appendChild(iconTd);
         tr.appendChild(nameTd);
         results.appendChild(tr);
-    }
-
+    }*/
+/*
     function clearResults() {
         var results = document.getElementById('results');
         while (results.childNodes[0]) {
             results.removeChild(results.childNodes[0]);
         }
     }
-
+*/
 
 
     // Get the place details for a hotel. Show the information in an info window,
     // anchored on the marker for the hotel that the user selected.
-    function showInfoWindow() {
+/*    function showInfoWindow() {
         var marker = this;
         places.getDetails({ placeId: marker.placeResult.place_id },
             function(place, status) {
@@ -241,9 +305,9 @@ function initMap() {
                 infoWindow.open(map, marker);
                 buildIWContent(place);
             });
-    }
+    } */
 
-
+/*
     // Load the place information into the HTML elements used by the info window.
     function buildIWContent(place) {
         document.getElementById('iw-icon').innerHTML = '<img class="hotelIcon" ' +
@@ -260,5 +324,6 @@ function initMap() {
         else {
             document.getElementById('iw-phone-row').style.display = 'none';
         }
-    }
+    }     */
+}
 }
