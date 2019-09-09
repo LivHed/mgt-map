@@ -1,9 +1,9 @@
 # My green travels
 
-This is Milestone Project 2: Interactive Frontend Development - Code Institute.
+This is my Milestone Project 2: Interactive Frontend Development - Code Institute.
 
 This is a one-page website that functions as a search tool to find sustainable places in 10 cities from a sustainable city index list. 
-Check it out here! 
+[Check it out here!](https://livhed.github.io/mgt-map/)
 
 --------------------------------------------------------------------------------------------
 ## UX
@@ -48,7 +48,7 @@ One is designed for desktop view and the other for mobile view. [Check them out 
 * **Other tools** I have used are [Cloud9 IDE](https://aws.amazon.com/cloud9/?origin=c9io) for the development of this site: writing, debugging and running my code. GIT was then used to push files to [Github](http://github.com) where the project is stored and deployed.
 * I used **Google maps** [Maps Javascrip API](https://developers.google.com/maps/documentation/javascript/tutorial) for the map function on the page.
 * As part of the **design process** i chose to use [Balsamic](https://balsamiq.com/) to make my wireframes in a simple way with a goodlooking result.
-* I used [Responsinator](http://www.responsinator.com/) to check the **responsiveness** of the page. 
+* I used [Responsinator](http://www.responsinator.com/) to check the **responsiveness** of the page.
 -------------------------------------------------------------------------------------------------------------------
 ## Testing
 Here I present how my website meet the needs of the different kinds of users that will visit the site, which I presented in the section UX: User stories:
