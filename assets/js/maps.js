@@ -1,6 +1,7 @@
 var markers = [];
 var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'; //change beachflag later
 var map;
+var infowindow;
 
 //init map. center set to Zagreb
 function initMap() {
@@ -110,12 +111,12 @@ function initMap() {
         var restaurants = document.getElementsByName("searchBy")[1].checked;
 
         if (accommodation) {
-            console.log(places.checked);
+            console.log(places);
             search = new google.maps.LatLng('lodging');
         }
 
         if (restaurants ) {
-            console.log(places.checked);
+            console.log(places);
             search = new google.maps.LatLng('restaurant');
         }
     });
