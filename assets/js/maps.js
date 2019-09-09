@@ -94,19 +94,32 @@ function initMap() {
 
 
 
-
     var infoWindow = new google.maps.InfoWindow({
         content: document.getElementById('info-content')
     });   
     
 
+ // When the user selects a city(restaurants or accommodation in my case), get the place details for the city and
+      // zoom the map in on the city. this is from autocomplete-example from google maps api doc, how do I change this to my needs?
+      //my needs is that when clicking on a radiobutton the search function will be called and the places(restaurants or accommodations) 
+      //will show with markers on the map, within the viewport. And hopefully show in the table-list below the map.
+      function onPlaceChanged() {
+        var place = search.getPlace();
+        if (place.geometry) {
+          map.panTo(place.geometry.location);
+          map.setZoom(14);
+          search();
+        } else {
+          document.getElementById('searchBy').onclick('searchPlaces');
+        }
+      } 
 
 
 //Target accommodations and restaurants with the name SearchBy to check if it´s true when clicked on. 
     places = new google.maps.places.PlacesService(map);
   
     var places = document.getElementById("searchPlaces");
-    places.addEventListener("click", function() {
+    places.addEventListener("click", function(onPlaceChanged) {
 
         var accommodation = document.getElementsByName("searchBy")[0].checked;
         
@@ -114,7 +127,7 @@ function initMap() {
 
         if (accommodation) {
             console.log(places);
-        function search() {
+       function search() {  
         var search = {
           bounds: map.getBounds(),
           types: ['lodging']
@@ -154,7 +167,7 @@ function initMap() {
         }
         markers = [];
       }
-      
+       }  
       
       function addResult(result, i) {
         var results = document.getElementById('results');
@@ -221,7 +234,7 @@ function initMap() {
       }        
         }      
 
-}
+
 
 
 // maybe not needed?
