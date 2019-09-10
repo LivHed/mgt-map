@@ -112,7 +112,7 @@ function initMap() {
           map.setZoom(14);
           search();
         } else {
-          document.getElementById('searchBy').onclick('searchPlaces');
+          document.getElementById('searchPlaces');
         }
       } 
 
@@ -129,10 +129,11 @@ function initMap() {
 
         if (accommodation) {
             console.log(places);
+            
        function search() {  
         var search = {
-          bounds: map.getBounds(),
-          types: ['lodging']
+          radius: 5000,
+          type: ['lodging']
         };
         
         places.nearbySearch(search, function(results, status) {
