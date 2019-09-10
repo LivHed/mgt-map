@@ -8,7 +8,7 @@ function initMap() {
      var london = {lat: 51.509865, lng: -0.118092};
      map = new google.maps.Map(document.getElementById('map'), {
         center: london,
-        zoom: 13
+        zoom: 2
     });
 
 
@@ -34,7 +34,7 @@ function initMap() {
     
     city.addEventListener("change", function() {
         console.log(city.value);
-        citymap(city, 14);
+        citymap(city, 13);
 
 /*        if (city.value == "london") {
             console.log(locations.london);
