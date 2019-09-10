@@ -36,67 +36,7 @@ function initMap() {
         console.log(city.value);
         citymap(city, 13);
 
-/*        if (city.value == "london") {
-            console.log(locations.london);
-            map.setCenter(new google.maps.LatLng(locations.london[0], locations.london[1]));
-            map.setZoom(14);
-        }
 
-        if (city.value == "stockholm") {
-            console.log(locations.stockholm);
-            map.setCenter(new google.maps.LatLng(locations.stockholm[0], locations.stockholm[1]));
-            map.setZoom(14);
-        }
-
-        if (city.value == "edinburgh") {
-            console.log(locations.edinburgh);
-            map.setCenter(new google.maps.LatLng(locations.edinburgh[0], locations.edinburgh[1]));
-            map.setZoom(14);
-        }
-
-        if (city.value == "singapore") {
-            console.log(locations.singapore);
-            map.setCenter(new google.maps.LatLng(locations.singapore[0], locations.singapore[1]));
-            map.setZoom(14);
-        }
-
-        if (city.value == "vienna") {
-            console.log(locations.vienna);
-            map.setCenter(new google.maps.LatLng(locations.vienna[0], locations.vienna[1]));
-            map.setZoom(14);
-        }
-
-        if (city.value == "zurich") {
-            console.log(locations.zurich);
-            map.setCenter(new google.maps.LatLng(locations.zurich[0], locations.zurich[1]));
-            map.setZoom(14);
-        }
-
-        if (city.value == "munich") {
-            console.log(locations.munich);
-            map.setCenter(new google.maps.LatLng(locations.munich[0], locations.munich[1]));
-            map.setZoom(14);
-        }
-
-        if (city.value == "oslo") {
-            console.log(locations.oslo);
-            map.setCenter(new google.maps.LatLng(locations.oslo[0], locations.oslo[1]));
-            map.setZoom(14);
-        }
-
-        if (city.value == "hongkong") {
-            console.log(locations.hongkong);
-            map.setCenter(new google.maps.LatLng(locations.hongkong[0], locations.hongkong[1]));
-            map.setZoom(14);
-        }
-
-        if (city.value == "frankfurt") {
-            console.log(locations.frankfurt);
-            map.setCenter(new google.maps.LatLng(locations.frankfurt[0], locations.frankfurt[1]));
-            map.setZoom(14);
-        }
-
-    });  */
     
 
 // Create the places service.
@@ -110,7 +50,7 @@ function initMap() {
 
         // Perform a nearby search.
         service.nearbySearch(
-            {location: locations, radius: 900, type: ['restaurants']},
+            {location: locations, radius: 900, type: ['lodging']},
             function(results, status, pagination) {
               if (status !== 'OK') return;
 
@@ -186,7 +126,23 @@ function initMap() {
 
 //Target accommodations and restaurants with the name SearchBy to check if it´s true when clicked on. 
 /*    places = new google.maps.places.PlacesService(map); */
+
+
+  /* Target places when clicked on, in the radiobuttons  */
+/*    var places = document.getElementById("searchPlaces");
+    function search(city, marker) {
+        map.getPlace(new google.maps.LatLng(locations[places.value][0], locations[places.value][1]));
+        map.getPlace(marker);
+    }
+    
+    city.addEventListener("click", function() {
+        console.log(places);
+    }
+    );  */
+
+   
   
+/*original, trying to modify the example above to work, this is not working really
     var places = document.getElementById("searchPlaces");
     places.addEventListener("click", function(onPlaceChanged) {
 
@@ -198,7 +154,7 @@ function initMap() {
             console.log(places);
             
         }
-    });
+    }); */
             
  /*      function search() {  
         var search = {
