@@ -3,14 +3,14 @@ var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/e
 var map;
 var infowindow;
 
-//init map. center set to Zagreb
+//Init map. center set to London
 function initMap() {
-      map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 2,
-        center: new google.maps.LatLng(45.878782, 15.983716),
-        mapTypeControl: false,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+     var london = {lat: 51.509865, lng: -0.118092};
+     map = new google.maps.Map(document.getElementById('map'), {
+        center: london,
+        zoom: 2
     });
+
 
     var locations = {
         'london': [51.509865, -0.118092],
@@ -90,14 +90,70 @@ function initMap() {
             map.setZoom(14);
         }
 
-    });
-
-
-
-    var infoWindow = new google.maps.InfoWindow({
-        content: document.getElementById('info-content')
-    });   
+    });  
     
+
+// Create the places service.
+        var service = new google.maps.places.PlacesService(map);
+        var getNextPage = null;
+        var moreButton = document.getElementById('more');
+        moreButton.onclick = function() {
+          moreButton.disabled = true;
+          if (getNextPage) getNextPage();
+        };
+
+        // Perform a nearby search.
+        service.nearbySearch(
+            {location: locations, radius: 500, type: ['lodging']},
+            function(results, status, pagination) {
+              if (status !== 'OK') return;
+
+              createMarkers(results);
+              moreButton.disabled = !pagination.hasNextPage;
+              getNextPage = pagination.hasNextPage && function() {
+                pagination.nextPage();
+              };
+            });
+      }
+      
+     
+      function createMarkers(places) {
+        var bounds = new google.maps.LatLngBounds();
+        var placesList = document.getElementById('places');
+
+        for (var i = 0, place; place = places[i]; i++) {
+          var image = {
+            url: place.icon,
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25)
+          };
+
+          var marker = new google.maps.Marker({
+            map: map,
+            icon: image,
+            title: place.name,
+            position: place.geometry.location
+          });
+
+          var li = document.createElement('li');
+          li.textContent = place.name;
+          placesList.appendChild(li);
+
+          bounds.extend(place.geometry.location);
+        }
+        map.fitBounds(bounds);
+      }
+      
+      
+
+/*    var infoWindow = new google.maps.InfoWindow({
+        content: document.getElementById('info-content')
+    });   */
+    
+
+
 
  // When the user selects a city that have been zoomed in to, as the code above works for, I click one of the radiobuttons(for restaurants or accommodation in my case),
  // and with this code below hopefully when clicking on a radiobutton the search function will be called and the places(restaurants or accommodations) 
@@ -105,7 +161,7 @@ function initMap() {
  // this is a code-snippet from the autocomplete-example from google maps api doc, already slightly modified. 
  // how do I change the autocomplete to my needs? and how do I call the search fucntion?
 
-      function onPlaceChanged() {
+       function onPlaceChanged() {
         var place = search.getPlace();
         if (place.geometry) {
           map.panTo(place.geometry.location);
@@ -115,10 +171,15 @@ function initMap() {
           document.getElementById('searchPlaces');
         }
       } 
-
+ /*     function search() {  
+        var search = {
+          radius: 5000,
+          type: ['lodging']
+        };
+       }   */
 
 //Target accommodations and restaurants with the name SearchBy to check if it´s true when clicked on. 
-    places = new google.maps.places.PlacesService(map);
+/*    places = new google.maps.places.PlacesService(map); */
   
     var places = document.getElementById("searchPlaces");
     places.addEventListener("click", function(onPlaceChanged) {
@@ -130,13 +191,15 @@ function initMap() {
         if (accommodation) {
             console.log(places);
             
-       function search() {  
+ /*      function search() {  
         var search = {
           radius: 5000,
           type: ['lodging']
         };
+       } */
+        }
         
-        places.nearbySearch(search, function(results, status) {
+  /*      places.nearbySearch(search, function(results, status) {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
                     clearResults();
                     clearMarkers();    
@@ -385,7 +448,6 @@ function initMap() {
         }
         else {
             document.getElementById('iw-phone-row').style.display = 'none';
-        }
-    }     */
+        } 
+  }      */
 });
-}
