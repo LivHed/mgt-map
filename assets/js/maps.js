@@ -27,10 +27,16 @@ function initMap() {
 
     /* Target cities to zoom in on them when clicked on, in the dropdown menu  */
     var city = document.getElementById("city");
+    function citymap(city, zoom) {
+        map.setCenter(new google.maps.LatLng(locations[city.value][0], locations[city.value][1]));
+        map.setZoom(zoom);
+    }
+    
     city.addEventListener("change", function() {
         console.log(city.value);
+        citymap(city, 14);
 
-        if (city.value == "london") {
+/*        if (city.value == "london") {
             console.log(locations.london);
             map.setCenter(new google.maps.LatLng(locations.london[0], locations.london[1]));
             map.setZoom(14);
@@ -90,7 +96,7 @@ function initMap() {
             map.setZoom(14);
         }
 
-    });  
+    });  */
     
 
 // Create the places service.
@@ -114,7 +120,7 @@ function initMap() {
                 pagination.nextPage();
               };
             });
-      }
+      
       
      
       function createMarkers(places) {
@@ -146,7 +152,7 @@ function initMap() {
         map.fitBounds(bounds);
       }
       
-      
+
 
 /*    var infoWindow = new google.maps.InfoWindow({
         content: document.getElementById('info-content')
@@ -453,3 +459,5 @@ function initMap() {
             document.getElementById('iw-phone-row').style.display = 'none';
         } 
   }      */
+    });
+}
