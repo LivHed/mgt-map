@@ -8,11 +8,11 @@ function initMap() {
      var london = {lat: 51.509865, lng: -0.118092};
      map = new google.maps.Map(document.getElementById('map'), {
         center: london,
-        zoom: 2
+        zoom: 13
     });
 
 
-    var locations = {
+/*    var locations = {
         'london': [51.509865, -0.118092],
         'stockholm': [59.330231, 18.068649],
         'edinburgh': [55.963333, -3.187392],
@@ -23,10 +23,10 @@ function initMap() {
         'oslo': [59.914063, 10.746723],
         'hongkong': [22.302711, 114.177216],
         'frankfurt': [50.110924, 8.682127]
-    };
+    };   */
 
     /* Target cities to zoom in on them when clicked on, in the dropdown menu  */
-    var city = document.getElementById("city");
+/*    var city = document.getElementById("city");
     city.addEventListener("change", function() {
         console.log(city.value);
 
@@ -91,7 +91,7 @@ function initMap() {
         }
 
     });  
-    
+    */
 
 // Create the places service.
         var service = new google.maps.places.PlacesService(map);
@@ -104,7 +104,7 @@ function initMap() {
 
         // Perform a nearby search.
         service.nearbySearch(
-            {location: locations, radius: 500, type: ['lodging']},
+            {location: london, radius: 500, type: ['restaurants']},
             function(results, status, pagination) {
               if (status !== 'OK') return;
 
@@ -161,7 +161,7 @@ function initMap() {
  // this is a code-snippet from the autocomplete-example from google maps api doc, already slightly modified. 
  // how do I change the autocomplete to my needs? and how do I call the search fucntion?
 
-       function onPlaceChanged() {
+ /*      function onPlaceChanged() {
         var place = search.getPlace();
         if (place.geometry) {
           map.panTo(place.geometry.location);
@@ -170,7 +170,7 @@ function initMap() {
         } else {
           document.getElementById('searchPlaces');
         }
-      } 
+      } */
  /*     function search() {  
         var search = {
           radius: 5000,
@@ -181,7 +181,7 @@ function initMap() {
 //Target accommodations and restaurants with the name SearchBy to check if it´s true when clicked on. 
 /*    places = new google.maps.places.PlacesService(map); */
   
-    var places = document.getElementById("searchPlaces");
+/*    var places = document.getElementById("searchPlaces");
     places.addEventListener("click", function(onPlaceChanged) {
 
         var accommodation = document.getElementsByName("searchBy")[0].checked;
@@ -189,7 +189,7 @@ function initMap() {
         var restaurants = document.getElementsByName("searchBy")[1].checked;
 
         if (accommodation) {
-            console.log(places);
+            console.log(places);^  */
             
  /*      function search() {  
         var search = {
@@ -197,7 +197,7 @@ function initMap() {
           type: ['lodging']
         };
        } */
-        }
+    /*    }  */
         
    /*     places.nearbySearch(search, function(results, status) {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -450,4 +450,3 @@ function initMap() {
             document.getElementById('iw-phone-row').style.display = 'none';
         } 
   }      */
-});
