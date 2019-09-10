@@ -1,7 +1,7 @@
-var markers = [];
-var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'; //change beachflag later
+//var markers = [];
+//var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'; //change beachflag later
 var map;
-var infowindow;
+//var infowindow;
 
 //Init map. center set to London
 function initMap() {
@@ -12,7 +12,7 @@ function initMap() {
     });
 
 
-/*    var locations = {
+    var locations = {
         'london': [51.509865, -0.118092],
         'stockholm': [59.330231, 18.068649],
         'edinburgh': [55.963333, -3.187392],
@@ -23,10 +23,10 @@ function initMap() {
         'oslo': [59.914063, 10.746723],
         'hongkong': [22.302711, 114.177216],
         'frankfurt': [50.110924, 8.682127]
-    };   */
+    };   
 
     /* Target cities to zoom in on them when clicked on, in the dropdown menu  */
-/*    var city = document.getElementById("city");
+    var city = document.getElementById("city");
     city.addEventListener("change", function() {
         console.log(city.value);
 
@@ -91,7 +91,7 @@ function initMap() {
         }
 
     });  
-    */
+    
 
 // Create the places service.
         var service = new google.maps.places.PlacesService(map);
@@ -104,7 +104,7 @@ function initMap() {
 
         // Perform a nearby search.
         service.nearbySearch(
-            {location: london, radius: 500, type: ['restaurants']},
+            {location: locations, radius: 900, type: ['restaurants']},
             function(results, status, pagination) {
               if (status !== 'OK') return;
 
@@ -181,7 +181,7 @@ function initMap() {
 //Target accommodations and restaurants with the name SearchBy to check if it´s true when clicked on. 
 /*    places = new google.maps.places.PlacesService(map); */
   
-/*    var places = document.getElementById("searchPlaces");
+    var places = document.getElementById("searchPlaces");
     places.addEventListener("click", function(onPlaceChanged) {
 
         var accommodation = document.getElementsByName("searchBy")[0].checked;
@@ -189,7 +189,10 @@ function initMap() {
         var restaurants = document.getElementsByName("searchBy")[1].checked;
 
         if (accommodation) {
-            console.log(places);^  */
+            console.log(places);
+            
+        }
+    });
             
  /*      function search() {  
         var search = {
