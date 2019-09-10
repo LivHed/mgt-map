@@ -78,26 +78,33 @@
       <ul id="places"></ul>
       <button id="more">More results</button>
     </div>
-    use if keeping the results-list inside of the map--> 
+    use this whole snippet if keeping the results-list inside of the map--> 
     
  
-  
+   <div ="col-md-12">   
+    <div id="right-panel">
+      <h2>Results</h2>
+      <ul id="places"></ul>
+      <button id="more">More results</button>
+    </div> 
+   </div>
     
 
-           <div class="col-md-12">
+   <!--        <div class="col-md-12">
                 <h3 id="results-heading" class="section-heading text-center">Results</h3>
             </div>
         
             <div class="col-md-12">
                 <div id="right-panel">  <!--listing was the id here before,check later if it+s needed-->
-                    <table id="resultsTable">
-                        <tbody id="places"></tbody> <!--results-->
-                    </table>
+     <!--               <table id="resultsTable">
+                        <tbody id="places"></tbody> <!--results was here before-->
+            <!--        </table>
                 </div>
             </div>
-        
+      -->
+ 
     
-    <div style="display: none">
+<!--    <div style="display: none">
             <div id="info-content">
                 <table>
                     <tr id="iw-url-row" class="iw_table_row">
@@ -128,7 +135,7 @@
     <div class="col-md-12">
       <button id="reset-btn" type="button" class="btn btn-info" onclick="reset()">Reset</button>
     </div>
-
+-->
   </section>
 
 
@@ -143,7 +150,7 @@
   <!--I have added the markerclusterer file here which allows me to add the clusters to the map-->
   <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 
-  <!--I have added the Google Maps API file which generates the maps-->
+  <!--I have added the Google Maps API file with the API key and the Places library which generates the maps-->
   <script src="assets/js/maps.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdUZr-tm7Rmc-0meyJj_jH3VtTzk7FBaU&libraries=places&callback=initMap" async defer></script>
 
