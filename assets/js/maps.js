@@ -50,9 +50,10 @@ function initMap() {
 
         // Perform a nearby search.
         service.nearbySearch(
-            {location: locations, radius: 900, type: ['lodging']},
+            {location: london, radius: 900, type: ['lodging']},
             function(results, status, pagination) {
               if (status !== 'OK') return;
+              
 
               createMarkers(results);
               moreButton.disabled = !pagination.hasNextPage;
