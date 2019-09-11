@@ -48,17 +48,18 @@ function initMap() {
         };
 
 
-        // try and modify the original below. To perform a nearby search.
-        var searchPlaces = document.getElementById("searchBy");
+
+    // try and modify the original below. To perform a nearby search.
+        var searchPlaces = document.getElementById("searchPlaces");
         function searchHotels(click, searchPlaces) {
-        
+        searchPlaces.addEventListener("click", function() {
+            
         service.nearbySearch(
             {location: london, radius: 1000, type: ['lodging']},
             
             function(results, status, pagination) {
               if (status !== 'OK') return;
-          
-           
+            });  
            //the original   
      /*     service.nearbySearch(
             {location: london, radius: 1000, type: ['lodging']},
@@ -72,6 +73,7 @@ function initMap() {
                 pagination.nextPage();
               };
             });
+        
       
       
      
@@ -444,5 +446,5 @@ function initMap() {
             document.getElementById('iw-phone-row').style.display = 'none';
         } 
   }      */
-    }
-}
+        }
+        }
