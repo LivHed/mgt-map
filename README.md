@@ -42,8 +42,8 @@ One is designed for desktop view and the other for mobile view. [Check them out 
 3. I would like to change the look of the ... and implement...
 --------------------------------------------------------------------------------------------------------------
 ## Technologies Used
-* **The languages** I have used for this project is [HTML5](https://www.w3schools.com/html/html5_intro.asp) and [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3). I have used Bootstrap grid with the built in media queries for the content to be responsive on all screen sizes. 
-* **The libraries** included are the Javascript libraries [JQuery](https://jquery.com/) and [Popper.js](https://popper.js.org/). And also [Fontawesome](https://fontawesome.com/) to add icons.
+* **The languages** I have used for this project is [HTML5](https://www.w3schools.com/html/html5_intro.asp), [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3) and [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript). I have used the Bootstrap gridsystem with the built in media queries for the content to be responsive.
+* **The libraries** included are the Javascript libraries [JQuery](https://jquery.com/) and [Popper.js](https://popper.js.org/) and [Bootstrap JS](https://getbootstrap.com).  (And also [Fontawesome](https://fontawesome.com/) to add icons.)  Remove fontaweome? not used now right? 
 * **Frameworks** I have used is Bootstrap 4.3.1. I used the BootstrapCDN on [this page](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
 * **Other tools** I have used are [Cloud9 IDE](https://aws.amazon.com/cloud9/?origin=c9io) for the development of this site: writing, debugging and running my code. GIT was then used to push files to [Github](http://github.com) where the project is stored and deployed.
 * I used **Google maps** [Maps Javascrip API](https://developers.google.com/maps/documentation/javascript/tutorial) for the map function on the page.
