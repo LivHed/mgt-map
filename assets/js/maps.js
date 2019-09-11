@@ -9,7 +9,11 @@ function initMap() {
      map = new google.maps.Map(document.getElementById('map'), {
         center: london,
         zoom: 2
-    });
+     });
+     map2 = new google.maps.Map(document.getElementById("mapTwo"), london);
+
+     map3 = new google.maps.Map(document.getElementById("mapThree"), london);
+    }
 
 
     var locations = {
@@ -38,6 +42,8 @@ function initMap() {
         });
 
 
+
+
 // Create the places service.
         var service = new google.maps.places.PlacesService(map);
         var getNextPage = null;
@@ -46,11 +52,30 @@ function initMap() {
           moreButton.disabled = true;
           if (getNextPage) getNextPage();
         };
+        
+//map Two
+var map2 =  new google.maps.Map(document.getElementById('mapTwo'),
+    
+    service.nearbySearch(
+            {location: london, radius: 1000, type: ['lodging']},
+            function(results, status, pagination) {
+              if (status !== 'OK') return;   
+                  
+
+              createMarkers(results);
+              moreButton.disabled = !pagination.hasNextPage;
+              getNextPage = pagination.hasNextPage && function() {
+                pagination.nextPage();
+              };
+        
+
+
+
 
 
 
     // try and modify the original below. To perform a nearby search.
-        var searchPlaces = document.getElementById("searchPlaces");
+ /*       var searchPlaces = document.getElementById("searchPlaces");
         function searchHotels(click, searchPlaces) {
         searchPlaces.addEventListener("click", function() {
             
@@ -59,12 +84,13 @@ function initMap() {
             
             function(results, status, pagination) {
               if (status !== 'OK') return;
-            });  
+            });  */ 
+            
            //the original   
-     /*     service.nearbySearch(
+   /*       service.nearbySearch(
             {location: london, radius: 1000, type: ['lodging']},
             function(results, status, pagination) {
-              if (status !== 'OK') return;   */
+              if (status !== 'OK') return;   
                   
 
               createMarkers(results);
@@ -73,7 +99,7 @@ function initMap() {
                 pagination.nextPage();
               };
             });
-        
+        */
       
       
      
@@ -105,7 +131,8 @@ function initMap() {
         }
         map.fitBounds(bounds);
       }
-      
+}
+
 
      
    //trying to connect the radiobuttons, when clicking on, find places in the city and show it in a list.   
@@ -446,5 +473,5 @@ function initMap() {
             document.getElementById('iw-phone-row').style.display = 'none';
         } 
   }      */
-        }
-        }
+ )
+  );
