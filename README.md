@@ -18,7 +18,7 @@ After doing research looking at websites with Google maps included, my goals wit
 
 ### Wireframes
 The wireframes are created with Balsamiq. They where made as a part of the design process and are saved as pdf documents and kept in a separate folder, which is called **wireframe**. 
-One is designed for desktop view and the other for mobile view. [Check them out here](https://github.com/LivHed/joel-adrian/tree/master/wireframe). I worked with the wireframes in Balsamic.
+One is designed for desktop view and the other for mobile view. [Check them out here](add link to the githubpage). I worked with the wireframes in Balsamic.
 
 ------------------------------------------------------------------------------------------------
 ## Features
@@ -37,7 +37,7 @@ One is designed for desktop view and the other for mobile view. [Check them out 
 * The footer 
 
 ### Features Left to Implement
-1. In the future I want to add more..
+1. In the future I want to add more radiobuttons to search for other places in the city, like cafes and parks. 
 2. In the future I also want to change the current..
 3. I would like to change the look of the ... and implement...
 --------------------------------------------------------------------------------------------------------------
