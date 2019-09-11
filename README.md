@@ -2,7 +2,7 @@
 
 This is my Milestone Project 2: Interactive Frontend Development - Code Institute.
 
-This is a one-page website that functions as a search tool to find sustainable places in 10 cities from a sustainable city index list. 
+This is a one-page website that function as a search tool to find accommodations and restaurants in 10 cities from a Sustainable Cities Index list.
 [Check it out here!](https://livhed.github.io/mgt-map/)
 
 --------------------------------------------------------------------------------------------
@@ -113,7 +113,7 @@ The landing page must be named index.html for the site to deploy correctly on Gi
 
 ### Media
 * The background picture used in this site was obtained from..
-* The cities are an inspiration from [Arcadis homepage](https://www.arcadis.com/en/global/our-perspectives/sustainable-cities-index-2018/citizen-centric-cities/#compare?c1=London), and the listed top 10 most sustainable cities according to the Sustainable City Index. 
+* The cities are an inspiration from [Arcadis homepage](https://www.arcadis.com/en/global/our-perspectives/sustainable-cities-index-2018/citizen-centric-cities/), and the listed top 10 most sustainable cities according to their Sustainable Cities Index.
 
 ### Acknowledgements
 E.g 
