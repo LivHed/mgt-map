@@ -1,6 +1,6 @@
 var map;
 var z = 12; // zoom level
-var loc = {lat: 51.509865, lng: -0.118092};
+var loc = { lat: 51.509865, lng: -0.118092 };
 var search_for = [];
 var locations = {
     'london': [51.509865, -0.118092],
@@ -17,7 +17,7 @@ var locations = {
 
 //Init map. center set to London
 function initMap() {
-     map = new google.maps.Map(document.getElementById('map'), {center: loc, zoom: z});
+    map = new google.maps.Map(document.getElementById('map'), { center: loc, zoom: z });
 };
 
 
@@ -32,21 +32,22 @@ function citymap(city, zoom) {
 city.addEventListener("change", function() {
     console.log(city.value);
     citymap(city, z);
-    });
+});
 
 
-// Search for hotels and restaurants dependingon which radiobutton is checked. 
-$("#searchPlaces").click(function(){
+// Search for hotels and restaurants depending on which radiobutton is checked. 
+$("#searchPlaces").click(function() {
     getExtScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDdUZr-tm7Rmc-0meyJj_jH3VtTzk7FBaU&libraries=places&callback=initMap2");
-    loc = {lat: locations[city.value][0], lng: locations[city.value][1]};
-    
-     if ($("#accomodationRadio").is(':checked')) {
-     search_for = ['lodging']; 
-     
-    } else if ($("#restaurantRadio").is(':checked')) {
-      search_for = ['restaurant'];
+    loc = { lat: locations[city.value][0], lng: locations[city.value][1] };
+
+    if ($("#accomodationRadio").is(':checked')) {
+        search_for = ['lodging'];
+
     }
-});  
+    else if ($("#restaurantRadio").is(':checked')) {
+        search_for = ['restaurant'];
+    }
+});
 
 
 function getExtScript(url) {
@@ -62,7 +63,7 @@ function getExtScript(url) {
 function initMap2() {
 
     // Create the map.
-    map = new google.maps.Map(document.getElementById('map'), {center: loc, zoom: z});
+    map = new google.maps.Map(document.getElementById('map'), { center: loc, zoom: z });
 
     // Create the places service.
     var service = new google.maps.places.PlacesService(map);
@@ -74,18 +75,17 @@ function initMap2() {
     };
 
     // Perform a nearby search.
-        service.nearbySearch(
-        {location: loc, radius: 600, type: search_for},
+    service.nearbySearch({ location: loc, radius: 600, type: search_for },
         function(results, status, pagination) {
-            if (status !== 'OK') return;  
-            
+            if (status !== 'OK') return;
+
             createMarkers(results);
             moreButton.disabled = !pagination.hasNextPage;
             getNextPage = pagination.hasNextPage && function() {
-            pagination.nextPage();
+                pagination.nextPage();
             };
         }
-);
+    );
 }
 
 
@@ -96,18 +96,18 @@ function createMarkers(places) {
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
-        url: place.icon,
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(25, 25)
+            url: place.icon,
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25)
         };
 
         var marker = new google.maps.Marker({
-        map: map,
-        icon: image,
-        title: place.name,
-        position: place.geometry.location
+            map: map,
+            icon: image,
+            title: place.name,
+            position: place.geometry.location
         });
 
         var li = document.createElement('li');
