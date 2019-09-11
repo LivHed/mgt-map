@@ -53,9 +53,9 @@ function initMap() {
           if (getNextPage) getNextPage();
         };
         
+        
 //map Two
-var map2 =  new google.maps.Map(document.getElementById('mapTwo'),
-    
+  
     service.nearbySearch(
             {location: london, radius: 1000, type: ['lodging']},
             function(results, status, pagination) {
@@ -473,5 +473,4 @@ var map2 =  new google.maps.Map(document.getElementById('mapTwo'),
             document.getElementById('iw-phone-row').style.display = 'none';
         } 
   }      */
- )
-  );
+ );
