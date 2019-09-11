@@ -35,19 +35,19 @@ city.addEventListener("change", function() {
     });
 
 
-// SEARCH STUFF
-//#testing was here before, for the click me button
+// Search for hotels and restaurants dependingon which radiobutton is checked. 
 $("#searchPlaces").click(function(){
- /*   if ($("#accomodationRadio").is(':checked'));   */
-  loc = {lat: locations[city.value][0], lng: locations[city.value][1]};
-  search_for = ['lodging']; 
-  getExtScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDdUZr-tm7Rmc-0meyJj_jH3VtTzk7FBaU&libraries=places&callback=initMap2");
- 
-/*   if ($("#restaurantRadio").is(':checked'));
+    getExtScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDdUZr-tm7Rmc-0meyJj_jH3VtTzk7FBaU&libraries=places&callback=initMap2");
     loc = {lat: locations[city.value][0], lng: locations[city.value][1]};
-    search_for = ['restaurant'];
-    getExtScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDdUZr-tm7Rmc-0meyJj_jH3VtTzk7FBaU&libraries=places&callback=initMap2");  */
+    
+     if ($("#accomodationRadio").is(':checked')) {
+     search_for = ['lodging']; 
+     
+    } else if ($("#restaurantRadio").is(':checked')) {
+      search_for = ['restaurant'];
+    }
 });  
+
 
 function getExtScript(url) {
     var js_script = document.createElement('script');
@@ -74,34 +74,10 @@ function initMap2() {
     };
 
     // Perform a nearby search.
- /* The original snippet    
         service.nearbySearch(
         {location: loc, radius: 600, type: search_for},
         function(results, status, pagination) {
-            if (status !== 'OK') return;  */
-        
-           
-            service.nearbySearch(
-            ($("#accomodationRadio").is(':checked')),
-        /*    $("#accommodationRadio", click),  */
-            {location: loc, radius: 600, type: 'lodging'}, 
-            function(results, status, pagination) {
-            if (status !== 'OK') return;
-            
-     /*       else $('#restaurantRadio', click),
-            {location: loc, radius: 600, type: 'restaurant'}, 
-            function(results, status, pagination) {
-            if (status !== 'OK') return;    */
-         
-     /*      if ($("#restaurantRadio").is(':checked'));
-            {location: loc, radius: 600, type: 'restaurant'},
-            (status !== 'OK');    */
-        
-      /*      $('#accommodationRadio', click),
-            {location: loc, radius: 600, type: 'restaurant'}, 
-            function(results, status, pagination) {
-            if (status !== 'OK') return;    */
-            
+            if (status !== 'OK') return;  
             
             createMarkers(results);
             moreButton.disabled = !pagination.hasNextPage;
