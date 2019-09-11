@@ -18,7 +18,7 @@ var locations = {
 //Init map. center set to London
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), { center: loc, zoom: z });
-};
+}
 
 
 /* Target cities to zoom in on them when clicked on, in the dropdown menu  */
@@ -49,6 +49,7 @@ $("#searchPlaces").click(function() {
     else if ($("#restaurantRadio").is(':checked')) {
         search_for = ['restaurant'];
     }
+    $("input:radio[name=searchBy]").filter(":checked").val();  // This line is to return the value (show icons on the map) only from the selected radiobutton.
 });
 
 
@@ -58,7 +59,7 @@ function getExtScript(url) {
     js_script.src = url;
     js_script.async = true;
     document.getElementsByTagName('head')[0].appendChild(js_script);
-};
+}
 
 //
 
