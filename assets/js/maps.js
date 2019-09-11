@@ -16,10 +16,9 @@ var locations = {
 };
 
 //Init map. center set to London
-function initMap() {
+ function initMap() {
     map = new google.maps.Map(document.getElementById('map'), { center: loc, zoom: z });
 }
-
 
 /* Target cities to zoom in on them when clicked on, in the dropdown menu  */
 var city = document.getElementById("city");
@@ -49,7 +48,9 @@ $("#searchPlaces").click(function() {
     else if ($("#restaurantRadio").is(':checked')) {
         search_for = ['restaurant'];
     }
-    $("input:radio[name=searchBy]").filter(":checked").val();  // This line is to return the value (show icons on the map) only from the selected radiobutton.
+ // This line is to return the value (show icons on the map) only from the selected radiobutton.
+ /*   var inputs = ($("input:radio[name=searchBy]:checked").val()); */
+    $("input:radio[name=businessType]").filter(":checked").val();
 });
 
 
