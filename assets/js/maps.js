@@ -35,9 +35,8 @@ function initMap() {
     city.addEventListener("change", function() {
         console.log(city.value);
         citymap(city, 13);
+        });
 
-
-    
 
 // Create the places service.
         var service = new google.maps.places.PlacesService(map);
@@ -48,12 +47,24 @@ function initMap() {
           if (getNextPage) getNextPage();
         };
 
-        // Perform a nearby search.
+
+        // try and modify the original below. To perform a nearby search.
+        var searchPlaces = document.getElementById("searchBy");
+        function searchHotels(click, searchPlaces) {
+        
         service.nearbySearch(
-            {location: london, radius: 900, type: ['lodging']},
+            {location: london, radius: 1000, type: ['lodging']},
+            
             function(results, status, pagination) {
               if (status !== 'OK') return;
-              
+          
+           
+           //the original   
+     /*     service.nearbySearch(
+            {location: london, radius: 1000, type: ['lodging']},
+            function(results, status, pagination) {
+              if (status !== 'OK') return;   */
+                  
 
               createMarkers(results);
               moreButton.disabled = !pagination.hasNextPage;
@@ -94,6 +105,23 @@ function initMap() {
       }
       
 
+     
+   //trying to connect the radiobuttons, when clicking on, find places in the city and show it in a list.   
+ /*       function displayRadioValue() { 
+            var ele = document.getElementsByName('searchBy'); 
+              
+            for(i = 0; i < ele.length; i++) { 
+                if(ele[i].checked) 
+                document.getElementById("places").innerHTML
+                        = "searchBy: "+ele[i].value; 
+            } 
+        } 
+*/
+
+
+
+
+
 
 /*    var infoWindow = new google.maps.InfoWindow({
         content: document.getElementById('info-content')
@@ -129,8 +157,8 @@ function initMap() {
 /*    places = new google.maps.places.PlacesService(map); */
 
 
-  /* Target places when clicked on, in the radiobuttons  */
-/*    var places = document.getElementById("searchPlaces");
+/*   Target places when clicked on, in the radiobuttons  */
+/*   var places = document.getElementById("searchPlaces");
     function search(city, marker) {
         map.getPlace(new google.maps.LatLng(locations[places.value][0], locations[places.value][1]));
         map.getPlace(marker);
@@ -416,5 +444,5 @@ function initMap() {
             document.getElementById('iw-phone-row').style.display = 'none';
         } 
   }      */
-    });
+    }
 }
