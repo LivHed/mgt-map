@@ -54,7 +54,7 @@ function initMap() {
         };
         
         
-//map Two
+//map Two, How to target the Showing markers in london for map2, mapTwo? 
   
     service.nearbySearch(
             {location: london, radius: 1000, type: ['lodging']},
