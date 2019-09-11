@@ -32,7 +32,9 @@ function citymap(city, zoom) {
 city.addEventListener("change", function() {
     console.log(city.value);
     citymap(city, z);
+     $('input[type="radio"]').prop('checked', false);  //unselect the radiobuttons when clicking on another city in the dropdown menu.
 });
+
 
 
 // Search for hotels and restaurants depending on which radiobutton is checked. 
