@@ -16,7 +16,7 @@ var locations = {
 };
 
 //Init map. center set to London
- function initMap() { 
+function initMap() {
     map = new google.maps.Map(document.getElementById('map'), { center: loc, zoom: z });
 }
 
@@ -29,54 +29,45 @@ function citymap(city, zoom) {
 }
 
 city.addEventListener("change", function() {
-    console.log(city.value);
     citymap(city, z);
-     $('input[type="radio"]').prop('checked', false);  //unselect the radiobuttons when choosing another city in the dropdown menu.
-     $("#places").empty();    //empty the result list when changing city.
+    $('input[type="radio"]').prop('checked', false); //unselect the radiobuttons when choosing another city in the dropdown menu.
+    $("#places").empty(); //empty the result list when changing city.
 });
 
- 
-
-// Search for hotels or restaurants depending on which radiobutton is checked. 
+// Search for accommodations or restaurants depending on which radiobutton is checked.
 $("#searchPlaces").click(function() {
-
     if ($("#accommodationRadio").is(':checked')) {
         search_for = ['lodging'];
-         console.log('aaccommodationRadio');
     }
     else if ($("#restaurantRadio").is(':checked')) {
         search_for = ['restaurant'];
-        console.log('restaurantRadio');
     }
-    
-    $('input[name=searchBy]:checked').val();   // To return the value (show icons on the map) only from the selected radiobutton.
+
+    $('input[name=searchBy]:checked').val(); // To return the value (show icons on the map) only from the selected radiobutton.
     getExtScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDdUZr-tm7Rmc-0meyJj_jH3VtTzk7FBaU&libraries=places&callback=initMap2");
     loc = { lat: locations[city.value][0], lng: locations[city.value][1] };
-     
 });
 
 //get the map from the body, remove it first and add a new one to it. 
-function getExtScript(url) { 
-  var generatedMap = document.getElementById('generatedMap') 
-  document.getElementsByTagName('body')[0].removeChild(generatedMap);
+function getExtScript(url) {
+    var generatedMap = document.getElementById('generatedMap')
+    document.getElementsByTagName('body')[0].removeChild(generatedMap);
 
-    
     var js_script = document.createElement('script');
     js_script.type = "text/javascript";
     js_script.src = url;
     js_script.async = true;
     js_script.setAttribute("id", "generatedMap");
-    document.getElementsByTagName('body')[0].appendChild(js_script);  
+    document.getElementsByTagName('body')[0].appendChild(js_script);
 }
 
-//
 
 function initMap2() {
-
     // Create the map. 
     map = new google.maps.Map(document.getElementById('map'), { center: loc, zoom: z });
 
-    // Create the places service. Code sample for nearbySearch from Google maps Javascript API, from this page https://developers.google.com/maps/documentation/javascript/examples/place-search-pagination
+    // Create the places service. Code sample for nearbySearch and createMarkers from Google maps Javascript API, 
+    // from this page https://developers.google.com/maps/documentation/javascript/examples/place-search-pagination 
     var service = new google.maps.places.PlacesService(map);
     var getNextPage = null;
     var moreButton = document.getElementById('more');
@@ -85,7 +76,7 @@ function initMap2() {
         if (getNextPage) getNextPage();
     };
 
-    // Perform a nearby search.
+    // Perform the nearbySearch.
     service.nearbySearch({ location: loc, radius: 600, type: search_for },
         function(results, status, pagination) {
             if (status !== 'OK') return;
@@ -100,12 +91,12 @@ function initMap2() {
 }
 
 
-//get the placesList and set the inner html to empty, so we can append new results later
+//Get the placesList and set the innerHTML to empty, so I can append new results after that.
 function createMarkers(places) {
     var bounds = new google.maps.LatLngBounds();
     var placesList = document.getElementById('places');
-    placesList.innerHTML = "";  
-    
+    placesList.innerHTML = "";
+
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
