@@ -142,7 +142,12 @@ a:hover {
 #resultsTable {
     border-collapse: collapse;
     width: 100%;
+}
+
+#more {
     
+}
+
 #rating {
     font-size: 13px;
     font-family: Arial Unicode MS;
