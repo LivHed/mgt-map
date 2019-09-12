@@ -1,22 +1,22 @@
 html,
 body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        font-family: 'PT Sans', sans-serif;
-        background: #c8dad3;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'PT Sans', sans-serif;
+    background: #c8dad3;
 }
 
 
 /*text area-----------------------------------------*/
 
 .header-text {
-        font-weight: bolder;
+    font-weight: bolder;
 
 }
 
 .intro-text {
-        font-weight: lighter;
+    font-weight: lighter;
 }
 
 a:link {
@@ -26,9 +26,9 @@ a:link {
 }
 
 a:hover {
-  color: #f6f6f6;
-  background-color: transparent;
-  text-decoration: none;
+    color: #f6f6f6;
+    background-color: transparent;
+    text-decoration: none;
 }
 
 
@@ -37,7 +37,7 @@ a:hover {
 /* select city menu-----------------------------------*/
 
 .input-boxes {
-        margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 
@@ -47,18 +47,23 @@ a:hover {
     margin-bottom: 15px;
 }
 
-
+/*.target {
+    width: 300px;
+    text-align: center;
+} for the select city form */
 
 /*map area------------------------------------------- */
 
-#map, #mapTwo, #mapThree {
-        height: 100%;
-        min-height: 415px;
-        margin-top: 10px;
+#map,
+#mapTwo,
+#mapThree {
+    height: 100%;
+    min-height: 415px;
+    margin-top: 10px;
 }
 
 #map-area {
-        width: auto;
+    width: auto;
 }
 
 
@@ -123,15 +128,14 @@ a:hover {
       }
 -----use if having the result list inside of the map to the right */
 
-
-
 /* result area ------------------------------------------*/
-
 
 #results-heading {
     margin-top: 15px;
     margin-bottom: 10px;
 }
+
+/* Use if I use this design for the results. 
 
 #listing {
     margin-right: 50px;
@@ -166,5 +170,5 @@ a:hover {
 
 .reset-btn {
     margin-top: 15px;
- }
-
+}
+*/
