@@ -53,20 +53,8 @@ a:hover {
     width: auto;
 }
 
-/* result area------------------------------------------*/
+/* results area------------------------------------------*/
 
 #places {
     font-weight: bold;
 }
-
-/* footer------------------------------------------------*/
-
-#footer-details {
-    margin-top: 15px;  
-    background-color: #eae9e9;
-}
-
-/* p {
-    margin-top: 0;
-    margin-bottom: 0;
-}   */
