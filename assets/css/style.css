@@ -7,7 +7,6 @@ body {
     background: #c8dad3;
 }
 
-
 /* Introduction text area-----------------------------------------*/
 
 .header-text {
@@ -57,4 +56,8 @@ a:hover {
 
 #places {
     font-weight: bold;
+}
+
+#more {
+    margin-bottom: 10px;
 }
