@@ -20,7 +20,7 @@ var locations = {
     map = new google.maps.Map(document.getElementById('map'), { center: loc, zoom: z });
 }
 
-/* Target cities to zoom in on them when clicked on, in the dropdown menu  */
+// Target cities to zoom in on them when clicked on.
 var city = document.getElementById("city");
 
 function citymap(city, zoom) {
@@ -37,8 +37,9 @@ city.addEventListener("change", function() {
 
 
 
-// Search for hotels and restaurants depending on which radiobutton is checked. 
+// Search for hotels or restaurants depending on which radiobutton is checked. 
 $("#searchPlaces").click(function() {
+    $('input[name=searchBy]:checked').val();   // To return the value (show icons on the map) only from the selected radiobutton.
     getExtScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDdUZr-tm7Rmc-0meyJj_jH3VtTzk7FBaU&libraries=places&callback=initMap2");
     loc = { lat: locations[city.value][0], lng: locations[city.value][1] };
 
@@ -49,11 +50,9 @@ $("#searchPlaces").click(function() {
     else if ($("#restaurantRadio").is(':checked')) {
         search_for = ['restaurant'];
     }
- // This line is to return the value (show icons on the map) only from the selected radiobutton.
- /*   var inputs = ($("input:radio[name=searchBy]:checked").val()); */
- /*   $("input:radio[name=searchBy]").filter(":checked").val();  */
-     $('input[name=searchBy]:checked').val(); 
+     
 });
+
 
 
 function getExtScript(url) {
@@ -71,7 +70,7 @@ function initMap2() {
     // Create the map.
     map = new google.maps.Map(document.getElementById('map'), { center: loc, zoom: z });
 
-    // Create the places service.
+    // Create the places service This is an example from Google maps Javsacript API documentation.
     var service = new google.maps.places.PlacesService(map);
     var getNextPage = null;
     var moreButton = document.getElementById('more');
