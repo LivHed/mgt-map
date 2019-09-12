@@ -31,7 +31,8 @@ function citymap(city, zoom) {
 city.addEventListener("change", function() {
     console.log(city.value);
     citymap(city, z);
-     $('input[type="radio"]').prop('checked', false);  //unselect the radiobuttons when clicking on another city in the dropdown menu.
+     $('input[type="radio"]').prop('checked', false);  //unselect the radiobuttons when choosing another city in the dropdown menu.
+     $("#places").empty();    //empty the result list when changing city.
 });
 
 
@@ -50,7 +51,8 @@ $("#searchPlaces").click(function() {
     }
  // This line is to return the value (show icons on the map) only from the selected radiobutton.
  /*   var inputs = ($("input:radio[name=searchBy]:checked").val()); */
-    $("input:radio[name=businessType]").filter(":checked").val();
+ /*   $("input:radio[name=searchBy]").filter(":checked").val();  */
+     $('input[name=searchBy]:checked').val(); 
 });
 
 
