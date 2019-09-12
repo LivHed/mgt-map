@@ -30,8 +30,8 @@ function citymap(city, zoom) {
 
 city.addEventListener("change", function() {
     citymap(city, z);
-    $('input[type="radio"]').prop('checked', false); //unselect the radiobuttons when choosing another city in the dropdown menu.
-    $("#places").empty(); //empty the result list when changing city.
+    $('input[type="radio"]').prop('checked', false);   //unselect the radiobuttons when choosing another city in the dropdown menu.
+    $("#places").empty();   //empty the result list when changing city.
 });
 
 // Search for accommodations or restaurants depending on which radiobutton is checked.
@@ -43,12 +43,12 @@ $("#searchPlaces").click(function() {
         search_for = ['restaurant'];
     }
 
-    $('input[name=searchBy]:checked').val(); // To return the value (show icons on the map) only from the selected radiobutton.
+    $('input[name=searchBy]:checked').val();   //To return the value (show icons on the map) only from the selected radiobutton.
     getExtScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDdUZr-tm7Rmc-0meyJj_jH3VtTzk7FBaU&libraries=places&callback=initMap2");
     loc = { lat: locations[city.value][0], lng: locations[city.value][1] };
 });
 
-//get the map from the body, remove it first and add a new one to it. 
+// Get the map from the body, remove it first and add a new one to it.
 function getExtScript(url) {
     var generatedMap = document.getElementById('generatedMap');
     document.getElementsByTagName('body')[0].removeChild(generatedMap);
@@ -90,13 +90,11 @@ function initMap2() {
     );
 }
 
-
 //Get the placesList and set the innerHTML to empty, so I can append new results after that.
 function createMarkers(places) {
     var bounds = new google.maps.LatLngBounds();
     var placesList = document.getElementById('places');
     placesList.innerHTML = "";
-
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
