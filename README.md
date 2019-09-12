@@ -17,8 +17,8 @@ After doing research looking at websites with Google maps included, my goals wit
 * As a traveller with no special focus while travelling I would like to check this page out that has narrowed down the search, out of pure interest, to see what kind of places the environmentally conscious travellers usually visit, and maybe I pass by one of these places to see if it´s something that interests me.
 
 ### Wireframes
-The wireframes are created with Balsamiq. They where made as a part of the design process and are saved as pdf documents and kept in a separate folder, which is called **wireframe**. 
-One is designed for desktop view and the other for mobile view. [Check them out here](add link to the githubpage). I worked with the wireframes in Balsamic.
+The wireframes are created with Balsamiq. They where made as a part of the design process and are saved as pdf documents and kept in a separate folder, which is called **wireframes**. 
+One is designed for desktop view and the other for mobile view. [Check them out here](https://github.com/LivHed/mgt-map/blob/master/wireframes/BalsamiqMockupMilestone2Latest.pdf).
 
 ------------------------------------------------------------------------------------------------
 ## Features
@@ -74,7 +74,7 @@ Here I present how my website meet the needs of the different kinds of users tha
 * 
 * (look at my first projects testing processes for inspo)
 
-2. **Click on each radiobutton for every city**
+2. **Click on each radiobutton (restaurants and accommodation) for every city**
 * 
 *
 
@@ -82,13 +82,14 @@ Here I present how my website meet the needs of the different kinds of users tha
 * 
 *
 
-4. **Click the Clear button** 
+4. **Click the Clear button** remove this 
 * 
 *
 
 5. **Bugs I came across while creating the site and while testing it**
 * 
-
+*
+*
 --------------------------------------------------------------------------------------------------------------
 ## Deployment
 **This website is hosted on GitHub pages, and deployed from the master branch. Follow these steps:**
