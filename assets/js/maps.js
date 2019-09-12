@@ -50,7 +50,7 @@ $("#searchPlaces").click(function() {
 
 //get the map from the body, remove it first and add a new one to it. 
 function getExtScript(url) {
-    var generatedMap = document.getElementById('generatedMap')
+    var generatedMap = document.getElementById('generatedMap');
     document.getElementsByTagName('body')[0].removeChild(generatedMap);
 
     var js_script = document.createElement('script');
