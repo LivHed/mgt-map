@@ -32,7 +32,6 @@
       <div class="col-md-12">
         <form class="target">
           <select class="input-boxes custom-select" id="city">
-                                <!-- <option value="choose" selected="selected">Choose a city here</option> -->
                                 <option value="london" selected="selected">London</option>
                                 <option value="stockholm">Stockholm</option>
                                 <option value="edinburgh">Edinburgh</option>
@@ -70,6 +69,7 @@
       </div>
     </div>
 
+<!--Result area with a table to show up to 60 results with the More results button, 20 loading at a time-->
 <table class="table">
   <thead>
     <tr>
@@ -84,67 +84,14 @@
 </table>
 <button id="more" type="button" class="btn btn-outline-light text-dark">More results</button>
 
- <!--   <div="col-md-12">
-      <div id="right-panel">
-        <h2>Results</h2>
-        <ul id="places"></ul>
-        <button id="more" type="button" class="btn btn-outline-light text-dark">More results</button>
-      </div>
-      </div>    -->
-
-      <!--possibly use this instead in the result section-->
-      <!--        <div class="col-md-12">
-                <h3 id="results-heading" class="section-heading text-center">Results</h3>
-            </div>
-
-            <div class="col-md-12">
-                <div id="right-panel">   listing was the id here before,check later if it+s needed-->
-              <!--         <table id="resultsTable">
-                        <tbody id="places"></tbody> results was here before-->
-      <!--        </table>
-                </div>
-            </div>
-      -->
-
-
-      <!--    <div style="display: none">
-            <div id="info-content">
-                <table>
-                    <tr id="iw-url-row" class="iw_table_row">
-                        <td id="iw-icon" class="iw_table_icon"></td>
-                        <td id="iw-url"></td>
-                    </tr>
-                    <tr id="iw-address-row" class="iw_table_row">
-                        <td class="iw_attribute_name">Address:</td>
-                        <td id="iw-address"></td>
-                    </tr>
-                    <tr id="iw-phone-row" class="iw_table_row">
-                        <td class="iw_attribute_name">Telephone:</td>
-                        <td id="iw-phone"></td>
-                    </tr>
-                    <tr id="iw-rating-row" class="iw_table_row">
-                        <td class="iw_attribute_name">Rating:</td>
-                        <td id="iw-rating"></td>
-                    </tr>
-                    <tr id="iw-website-row" class="iw_table_row">
-                        <td class="iw_attribute_name">Website:</td>
-                        <td id="iw-website"></td>
-                    </tr>
-                </table>
-            </div>
-            <button id="more">More results</button>
-            </div>
-
-    <div class="col-md-12">   //maybe use later
-      <button id="reset-btn" type="button" class="btn btn-info" onclick="reset()">Reset</button>
-    </div>
--->
-
 
   </section>
+<footer class="container-fluid" id="footerdetails">
+  <div class="col-md-12">
+    <p>Made by: Livia Hedin</p>
+  </div>
+</footer>
 
-
-  <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
