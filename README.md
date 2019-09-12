@@ -32,13 +32,14 @@ One is designed for desktop view and the other for mobile view. [Check them out 
 * When holding the mouse over an icon the name of the place are showing in the map.
 * The background color is supposed to give the users a feeling of the page´s authenticity when it comes to environmental sustainable thinking, and relate to the title of the page with its green insinuation. 
 * The name of the webpage is placed in the navbar in a center position, like a brand or logo, meant to be discrete with the transparent background of the navbar.
-* The footer is designed as small with a discrete color suitable together with the background color of the page, so it does not take away the focus from the most important parts of the page. 
 
 ### Features Left to Implement
 1. In the future I want to add more radiobuttons to search for other places in the city, like cafes and parks.
-2. I want to add marker clustering for when the places are located close to eachother.
-2. I want to add info windows to show the name and adress of the place in a small window when clicking on the iconmarkers, and also that to be shown in the result list beside the names.
-3. In the future I also want to add an option to perform a textSearch in the cities, to narrow down the search to be more related to "green travels" with specific words related to sustainability, like "organic" or "sustainable".
+2. I want to add marker clustering for when the places are located close to each other.
+3. If I have had more time in the project I would have focused on and worked more with the UI.
+4. If I have had more time I would also have added a footer.
+5. I want to add info windows to show the name and adress of the place in a small window when clicking on the iconmarkers, and also that to be shown in the result list beside the names.
+6. In the future I also want to add an option to perform a textSearch in the cities, to narrow down the search to be more related to "green travels" with specific words related to sustainability, like "organic" or "sustainable".
 --------------------------------------------------------------------------------------------------------------
 ## Technologies Used
 * **The languages** I have used for this project is [HTML5](https://www.w3schools.com/html/html5_intro.asp), [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3) and [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript). I have used the Bootstrap gridsystem with the built in media queries for the content to be responsive.
