@@ -2,31 +2,32 @@
 
 This is my Milestone Project 2: Interactive Frontend Development - Code Institute.
 
-This is a one-page website that function as a search tool to find accommodations and restaurants in 10 cities from a Sustainable Cities Index list.
+On this one-page website I include 10 cities that are listed in a Sustainable Cities Index. You can search for accommodations and restaurants in these cities around the city center, while exploring them.
 [Check it out here!](https://livhed.github.io/mgt-map/)
 
 --------------------------------------------------------------------------------------------
 ## UX
 After doing research looking at websites with Google maps included, my goals with the design was set to: 
-1. To make the design suitable for people who care about sustainability with choice of words, fonts and colors that give the feeling of sustainability and an environmentally conciousness. I wanted to do this with a simple a design as possible.
-2. To make one page webpage which provides a user friendly and easy layout to quick be able to understand what you can do and how on the website.
+1. To make the design suitable for people who care about sustainability with my choice of words, fonts and colors that give the feeling of sustainability and an environmentally conciousness. I wanted to do this with a simple a design as possible.
+2. To make a one page webpage which provides a user friendly and easy layout to quick be able to understand what you can do and how, on the website.
 
 ### User stories
-* As an environmentally conscious traveller I want to have a look at the range of places with a sustainable focus before I travel there, to get inspired and remember to keep the focus of those things I find most important in the society.
-* As a traveller that´s on a trip right now I would like to have a look at the supply of environmentally conscious places in the city while I´m on the run on my way to explore the city, and would like to pass by a couple of these places.
-* As a traveller with no special focus while travelling I would like to check this page out that has narrowed down the search, out of pure interest, to see what kind of places the environmentally conscious travellers usually visit, and maybe I pass by one of these places to see if it´s something that interests me.
+* As an environmentally conscious traveller I want to have a look at cities with a sustainable focus before I travel there, to get inspired and remember to keep the focus of those things I find most important in the society.
+* As an environmentally conscious traveller on the road right now I would like to know where to eat and stay for the night while exploring the sustainable city I´m currently in.
+* As a traveller with many different kinds of interests I would like to check this page out, out of pure curiosity, to see what kinds of cities the environmentally conscious travellers would want to visit, and maybe travel there myself to see what these cities are like.
 
 ### Wireframes
 The wireframes are created with Balsamiq. They where made as a part of the design process and are saved as pdf documents and kept in a separate folder, which is called **wireframes**. 
-One is designed for desktop view and the other for mobile view. [Check them out here](https://github.com/LivHed/mgt-map/blob/master/wireframes/BalsamiqMockupMilestone2Latest.pdf).
+One is designed for desktop view and the other for mobile view. [Check them out here!](https://github.com/LivHed/mgt-map/blob/master/wireframes/BalsamiqMockupMilestone2Latest.pdf).
 
 ------------------------------------------------------------------------------------------------
 ## Features
 ### Existing Features
-* The presentation text is placed under the name of page and give a short introduction to the intention of the page, which give the users a direct way of reading about the page the first thing they do when they land on the page.
-* The search fields is placed underneath the introduction text as a natural next step to follow after reading about it and follow the instructions given in the text.
+* The presentation text is placed under the name of the page and provides a short introduction to the intention of the page, which give the users a direct way of reading about the page the first thing they do when they land on the page.
+* The dropdown menu with the cities in it is placed underneath the introduction text as a natural next step to follow after reading about it and follow the directions given in the text.
+* The functions of the radio buttons when clicked on them is that they returns results with either accommodations or restaurants in the chosen city, depending on which button you click, and shows markericons of the found places.
 * The Result list 
-* The Clear button 
+* The More results button 
 * The navbar and the footer have the same design, which is meant to be a part of the clean design. 
 * A custom scrollbar is added, with a smooth scroll effect. I planned for the scrollbar to be discrete in it´s design.
 * The fullwidth background image is supposed to give the users a feeling of the page´s authenticity when it comes to environmental sustainable thinking. The content scrolls infront of the image.
@@ -53,11 +54,11 @@ One is designed for desktop view and the other for mobile view. [Check them out 
 ## Testing
 Here I present how my website meet the needs of the different kinds of users that will visit the site, which I presented in the section UX: User stories:
 
-* As an environmentally conscious traveller I want to have a look at the range of places with a sustainable focus before I travel there, to get inspired and remember to keep the focus of those things I find most important in the society. --> The information about the sustainable cities and how to find them and it´s range of these kinds of places are easily found as presented in the text underneath the heading, and are therefor easy to understand how to search for in the search fields, and to finally see on the map and listed below it.
+* As an environmentally conscious traveller I want to have a look at cities with a sustainable focus before I travel there, to get inspired and remember to keep the focus of those things I find most important in the society. --> The information about which cities that are listed as sustainable cities and how to find them in the map are easily seen in the introduction right underneath the heading, and are therefore easy to understand how to find by choosing a city in the dropdown menu, and to finally see on the map and listed below it.
 
-* As a traveller that´s on a trip right now I would like to have a look at the supply of environmentally conscious places in the city while I´m on the run on my way to explore the city, and would like to pass by a couple of these places. --> This can easily be done on the smartphone since the webpage is a mobile-first design with a simple and easy to understand- layout.
+* As an environmentally conscious traveller on the road right now I would like to know where to eat and stay for the night while exploring the sustainable city I´m currently in. --> This information can easily be found on a smartphone on the go, since the webpage has a mobile-first design with a simple and easy understandable layout.
 
-* As a traveller with no special focus while travelling I would like to check this page out that has narrowed down the search, out of pure interest, to see what kind of places the environmentally conscious travellers usually visit, and maybe I pass by one of these places to see if it´s something that interests me. --> The result list and markers on the map is easy to find and to see.  
+* As a traveller with many different kinds of interests I would like to check this page out, out of pure curiosity, to see what kinds of cities the environmentally conscious travellers would want to visit, and maybe travel there myself to see what these cities are like. --> This research can be done from home or on the go, beforehand or during the stay in the city.
 
 #### Validation of code
 * I used [this website](https://validator.w3.org/#validate_by_input) to validate my HTML by direct input.
