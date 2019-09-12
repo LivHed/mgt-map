@@ -55,8 +55,7 @@ $("#searchPlaces").click(function() {
 });
 
 
-
-function getExtScript(url) {
+function getExtScript(url) { 
     var js_script = document.createElement('script');
     js_script.type = "text/javascript";
     js_script.src = url;
