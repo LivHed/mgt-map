@@ -40,6 +40,12 @@ a:hover {
     margin-bottom: 15px;
 }
 
+#searchPlaces {
+    width: fit-content;
+    margin: auto;
+}
+
+
 
 /* radio buttons area-----------------------------------*/
 
