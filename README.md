@@ -39,7 +39,7 @@ One is designed for desktop view and the other for mobile view. [Check them out 
 ### Features Left to Implement
 1. In the future I want to add more radiobuttons to search for other places in the city, like cafes and parks.
 2. In the future I also want to add an option to perform a textSearch in the cities, to narrow down the search to be more related to "green travels" with specific words related to sustainability, like "organic" or "sustainable".
-3. (I would like to change the look of the ... and implement...)
+3. To fix the Api initMap2 error that´s showing in the console. I tried to get the map from the body, to remove it first and add a new one to it, but it did not work. This doesn´t affect the functionality though, and will be adressed later on. 
 --------------------------------------------------------------------------------------------------------------
 ## Technologies Used
 * **The languages** I have used for this project is [HTML5](https://www.w3schools.com/html/html5_intro.asp), [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3) and [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript). I have used the Bootstrap gridsystem with the built in media queries for the content to be responsive.
