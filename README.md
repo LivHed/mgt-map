@@ -93,6 +93,7 @@ Here I present how my website meet the needs of the users that will visit the si
 * When clicking on More results button for the second time, for accommodations in Singapore there are only 8 results showing. This is probably because of that all of the results have been showned within the specified radius where the search is performed. 
 * When testing the responsiveness of the webpage I discovered that the footer is not placed at the bottom of the page (there is space underneath) on the devices Ipad, Ipad Pro and devices with more height than these devices. This is not yet fixed.
 * An Api initMap2 error shows in the console "You have included the Google Maps JavaScript API multiple times on this page. This may cause unexpected errors". I tried to solve it by add id, get the map from the body, to remove it first and add a new one to it, but it did not work. This doesn´t affect the functionality of the page, and will be adressed later on.
+* When running the code through JS Hint it gives the messages Three unused variables, Two undefined variables and a warning. Since this is not affecting the functionality of the page I will adress that later when there is more time. 
 --------------------------------------------------------------------------------------------------------------
 ## Deployment
 **This website is hosted on GitHub pages, and deployed from the master branch. Follow these steps:**
