@@ -71,9 +71,21 @@ Here I present how my website meet the needs of the users that will visit the si
 * The Google maps Javascript API and Places library is responsive in itself and is set to respond to the interactions of the user.
 
 #### Testing process scenarios 
-1. **Zoom in on cities wheen choosing a city in the dropdown menu**
-* 
-* (look at my first projects testing processes for inspo)
+
+(For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+like this.. 
+Contact form:
+1.Go to the "Contact Us" page
+2.Try to submit the empty form and verify that an error message about the required fields appears
+3.Try to submit the form with an invalid email address and verify that a relevant error message appears
+4.Try to submit the form with all inputs valid and verify that a success message appears.)
+
+ **Zoom in on cities wheen choosing a city in the dropdown menu**
+1. Click on the dropdown menu.
+2. Choose a city to see that it´s zoomed in on as intended.
+3. Try this with all of the cities one by one and verify that the function is working for all of them.
+
+(look at my first projects testing processes for inspo..)
 
 2. **Click on each radiobutton (restaurants and accommodation) for every city**
 * 
