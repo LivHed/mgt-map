@@ -25,10 +25,10 @@ One is designed for desktop view and the other for mobile view. [Check them out 
 ### Existing Features
 * The presentation text is placed under the name of the page and provides a short introduction to the intention of the page, which give the users a direct way of reading about the page the first thing they do when they land on the page.
 * The dropdown menu with the cities in it is placed underneath the introduction text as a natural next step to follow after reading about it and follow the directions given in the text.
-* The functions of the radio buttons when clicked on them is that they returns results with either accommodations or restaurants in the chosen city, depending on which button you click, and shows icon markers of the found places. The results are displayed in a discrete way with no background color to keep the simple design of the whole page.
+* The functions of the radio buttons when clicked on them is that they return results with either accommodations or restaurants in the chosen city, depending on which button you click, and shows icon markers of the found places. The results are displayed in a discrete way with no background color to keep the simple design of the whole page.
 * The Result list is shown in a responsive way, 20 results at a time. Up to 60 results can be shown for either restaurants or accommodations in each city, if found within the radius I have specified.
 * The More results button shows 20 more results when pressing it. 
-* The zoom function of the map is kept for the users to be able to zoom in even more themselves to see a close-up of where the places are located. 
+* The manual zoom function of the map is kept for the users to be able to zoom in even more themselves to see a close-up of where the places are located. 
 * When holding the mouse over an icon the name of the place are showing in the map.
 * The background color is supposed to give the users a feeling of the page´s authenticity when it comes to environmental sustainable thinking, and relate to the title of the page with its green insinuation. 
 * The name of the webpage is placed in the navbar in a center position, like a brand or logo, meant to be discrete with the transparent background of the navbar.
@@ -37,8 +37,8 @@ One is designed for desktop view and the other for mobile view. [Check them out 
 1. In the future I want to add more radiobuttons to search for other places in the city, like cafes and parks.
 2. I want to add marker clustering for when the places are located close to each other.
 3. If I have had more time in the project I would have focused on and worked more with the UI.
-4. If I have had more time I would also have added a footer.
-5. I want to add info windows to show the name and adress of the place in a small window when clicking on the iconmarkers, and also that to be shown in the result list beside the names.
+4. If I have had more time I would also have added a footer that was sticked to the bottom of the page.
+5. I want to add info windows to show the name and adress of the place in a small window when clicking on the iconmarkers, and also those details to be shown in the result list beside the names.
 6. In the future I also want to add an option to perform a textSearch in the cities, to narrow down the search to be more related to "green travels" with specific words related to sustainability, like "organic" or "sustainable".
 --------------------------------------------------------------------------------------------------------------
 ## Technologies Used
@@ -90,10 +90,9 @@ Here I present how my website meet the needs of the users that will visit the si
 3. Verify that the button is unable to click again when 60 results have been shown and the button have been clicked two times.
 
  **Bugs I came across while creating the site and while testing it**
-* When clicking on More results button for the second time, for accommodations in Singapore there are only 8 results showing. This is probably because of that all of the results have been showned within the specified radius where the search is performed. 
-* When testing the responsiveness of the webpage I discovered that the footer is not placed at the bottom of the page (there is space underneath) on the devices Ipad, Ipad Pro and devices with more height than these devices. This is not yet fixed.
+* When clicking on More results button for the second time, for accommodations in Singapore there are only 8 results showing. This is probably because of that all of the results have been showned within the specified radius where the search is performed.
 * An Api initMap2 error shows in the console "You have included the Google Maps JavaScript API multiple times on this page. This may cause unexpected errors". I tried to solve it by add id, get the map from the body, to remove it first and add a new one to it, but it did not work. This doesn´t affect the functionality of the page, and will be adressed later on.
-* When running the code through JS Hint it gives the messages Three unused variables, Two undefined variables and a warning. Since this is not affecting the functionality of the page I will adress that later when there is more time. 
+* When running the code through JS Hint it gives the messages Three unused variables, Two undefined variables and a warning. Since this is not affecting the functionality of the page I will adress that later. 
 --------------------------------------------------------------------------------------------------------------
 ## Deployment
 **This website is hosted on GitHub pages, and deployed from the master branch. Follow these steps:**
@@ -118,8 +117,8 @@ The landing page must be named index.html for the site to deploy correctly on Gi
 * The results showing with accommodations and restaurants are shown thanks to Google Maps Javascript API.
 
 ### Media
-* The cities are chosen because of inspiration from the company [Arcadis homepage](https://www.arcadis.com/en/global/our-perspectives/sustainable-cities-index-2018/citizen-centric-cities/), and the listed top 10 most sustainable cities according to their Sustainable Cities Index.
+* The cities are chosen because of inspiration from the company [Arcadis](https://www.arcadis.com/en/global/our-perspectives/sustainable-cities-index-2018/citizen-centric-cities/) homepage, and the listed top 10 most sustainable cities according to their Sustainable Cities Index.
 
 ### Acknowledgements
 * For the radio buttons in the html code I copied the code snippet for the Inline custom form controls, from W3Schools on [this page](https://www.w3schools.com/bootstrap4/bootstrap_forms_custom.asp) and then modified it to what suited my needs.
-* To perform a nearbySearch in the js code I copied parts of the sample code for the Page Search Pagination example, from [Google maps Javsacript API](https://developers.google.com/maps/documentation/javascript/examples/place-search-pagination).  
+* To perform a nearbySearch and createMarkers in the js code I copied parts of the sample code for the Page Search Pagination example, from [Google maps Javsacript API](https://developers.google.com/maps/documentation/javascript/examples/place-search-pagination).  
