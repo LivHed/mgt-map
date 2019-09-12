@@ -39,6 +39,7 @@ city.addEventListener("change", function() {
 
 // Search for hotels or restaurants depending on which radiobutton is checked. 
 $("#searchPlaces").click(function() {
+    
     $('input[name=searchBy]:checked').val();   // To return the value (show icons on the map) only from the selected radiobutton.
     getExtScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDdUZr-tm7Rmc-0meyJj_jH3VtTzk7FBaU&libraries=places&callback=initMap2");
     loc = { lat: locations[city.value][0], lng: locations[city.value][1] };
@@ -67,10 +68,10 @@ function getExtScript(url) {
 
 function initMap2() {
 
-    // Create the map.
+    // Create the map. 
     map = new google.maps.Map(document.getElementById('map'), { center: loc, zoom: z });
 
-    // Create the places service This is an example from Google maps Javsacript API documentation.
+    // Create the places service. Code sample for nearbySearch from Google maps Javascript API, from this page https://developers.google.com/maps/documentation/javascript/examples/place-search-pagination
     var service = new google.maps.places.PlacesService(map);
     var getNextPage = null;
     var moreButton = document.getElementById('more');
