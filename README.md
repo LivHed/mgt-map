@@ -26,20 +26,20 @@ One is designed for desktop view and the other for mobile view. [Check them out 
 * The presentation text is placed under the name of the page and provides a short introduction to the intention of the page, which give the users a direct way of reading about the page the first thing they do when they land on the page.
 * The dropdown menu with the cities in it is placed underneath the introduction text as a natural next step to follow after reading about it and follow the directions given in the text.
 * The functions of the radio buttons when clicked on them is that they returns results with either accommodations or restaurants in the chosen city, depending on which button you click, and shows markericons of the found places.
-* The Result list...
-* The More results button...
-* (The navbar and the footer have the same design, which is meant to be a part of the clean design.)
-* (A custom scrollbar is added, with a smooth scroll effect. I planned for the scrollbar to be discrete in it´s design.)
+* The Result list is shown in a responsive way, 20 results at a time. Up to 60 results can be shown for either restaurants or accommodations in each city, if found within the radius I have specified.
+* The More results button shows 20 more results when pressing it. 
+* The zoom function of the map is kept for the users to be able to zoom in even more themselves to see a close-up of where the places are located. 
+* When holding the mouse over an icon the name of the place are showing in the map.
 * The background color is supposed to give the users a feeling of the page´s authenticity when it comes to environmental sustainable thinking, and relate to the title of the page with its green insinuation. 
-* The name of the webpage is placed in the navbar in a center position, like a brand or logo, meant to be discrete with the transparent background.
-* (The hover effects on the button is designed with ...a hm color.., and the transition effect is set to feel smooth)
-* (A Favicon is added for a better overall look of the website.)
-* The footer 
+* The name of the webpage is placed in the navbar in a center position, like a brand or logo, meant to be discrete with the transparent background of the navbar.
+* The footer is designed as small with a discrete color suitable together with the background color of the page, so it does not take away the focus from the most important parts of the page. 
 
 ### Features Left to Implement
 1. In the future I want to add more radiobuttons to search for other places in the city, like cafes and parks.
-2. In the future I also want to add an option to perform a textSearch in the cities, to narrow down the search to be more related to "green travels" with specific words related to sustainability, like "organic" or "sustainable".
-3. To fix the Api initMap2 error that´s showing in the console. I tried to get the map from the body, to remove it first and add a new one to it, but it did not work. This doesn´t affect the functionality though, and will be adressed later on. 
+2. I want to add marker clustering for when the places are located close to eachother.
+2. I want to add info windows to show the name and adress of the place in a small window when clicking on the iconmarkers, and also that to be shown in the result list beside the names.
+3. In the future I also want to add an option to perform a textSearch in the cities, to narrow down the search to be more related to "green travels" with specific words related to sustainability, like "organic" or "sustainable".
+4. To fix the Api initMap2 error that´s showing in the console. I tried to get the map from the body, to remove it first and add a new one to it, but it did not work. This doesn´t affect the functionality though, and will be adressed later on. 
 --------------------------------------------------------------------------------------------------------------
 ## Technologies Used
 * **The languages** I have used for this project is [HTML5](https://www.w3schools.com/html/html5_intro.asp), [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3) and [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript). I have used the Bootstrap gridsystem with the built in media queries for the content to be responsive.
@@ -80,28 +80,23 @@ Contact form:
 3.Try to submit the form with an invalid email address and verify that a relevant error message appears
 4.Try to submit the form with all inputs valid and verify that a success message appears.)
 
- **Zoom in on cities wheen choosing a city in the dropdown menu**
+ **Dropdown menu with cities**
 1. Click on the dropdown menu.
 2. Choose a city to see that it´s zoomed in on as intended.
-3. Try this with all of the cities one by one and verify that the function is working for all of them.
+3. Try this with all of the cities one by one, and verify that the function is working for all of them.
 
-(look at my first projects testing processes for inspo..)
+ **Radio buttons**
+1. Click on the accommodations radio button for every selected city and verify that the results of accommodations are showing on the map with the proper iconmarkers.
+2. Click on the restaurants radio button for every selected city and verifya that the results of restaurants are showing on the map with the proper iconmarkers.
 
-2. **Click on each radiobutton (restaurants and accommodation) for every city**
+ **More results button**
+1. When the first 20 results are showing in the Results list, click on More results button and verify that 20 new results are showing in the list.
+2. Click the button again and verify that 20 more results are showing.
+3. Verify that the button is unable to click again when 60 results have been shown and the button have been clicked two times.
+
+4. **Bugs I came across while creating the site and while testing it**
+* When clicking on More results button for the second time, for accommodations in Singapore there are only 8 results showing. This is probably because of that all of the results have been showned within the specified radius in the nearbySearch function in the javascript file.
 * 
-*
-
-3. **Click on the markers shown on the screen to see the info window **
-* (will I be able to manage this in time?)
-*
-
-4. **Click the More results button**
-* 
-*
-
-5. **Bugs I came across while creating the site and while testing it**
-* 
-*
 *
 --------------------------------------------------------------------------------------------------------------
 ## Deployment
