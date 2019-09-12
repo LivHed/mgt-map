@@ -16,7 +16,7 @@ var locations = {
 };
 
 //Init map. center set to London
- function initMap() {
+ function initMap() { 
     map = new google.maps.Map(document.getElementById('map'), { center: loc, zoom: z });
 }
 
@@ -35,17 +35,18 @@ city.addEventListener("change", function() {
      $("#places").empty();    //empty the result list when changing city.
 });
 
-
+ 
 
 // Search for hotels or restaurants depending on which radiobutton is checked. 
 $("#searchPlaces").click(function() {
 
-    if ($("#accomodationRadio").is(':checked')) {
+    if ($("#accommodationRadio").is(':checked')) {
         search_for = ['lodging'];
-
+         console.log('aaccommodationRadio');
     }
     else if ($("#restaurantRadio").is(':checked')) {
         search_for = ['restaurant'];
+        console.log('restaurantRadio');
     }
     
     $('input[name=searchBy]:checked').val();   // To return the value (show icons on the map) only from the selected radiobutton.
@@ -54,13 +55,18 @@ $("#searchPlaces").click(function() {
      
 });
 
-
+//get the map from the body, remove it first and add a new one to it. 
 function getExtScript(url) { 
+  var generatedMap = document.getElementById('generatedMap') 
+  document.getElementsByTagName('body')[0].removeChild(generatedMap);
+
+    
     var js_script = document.createElement('script');
     js_script.type = "text/javascript";
     js_script.src = url;
     js_script.async = true;
-    document.getElementsByTagName('head')[0].appendChild(js_script);
+    js_script.setAttribute("id", "generatedMap");
+    document.getElementsByTagName('body')[0].appendChild(js_script);  
 }
 
 //
@@ -94,10 +100,12 @@ function initMap2() {
 }
 
 
-
+//get the placesList and set the inner html to empty, so we can append new results later
 function createMarkers(places) {
     var bounds = new google.maps.LatLngBounds();
     var placesList = document.getElementById('places');
+    placesList.innerHTML = "";  
+    
 
     for (var i = 0, place; place = places[i]; i++) {
         var image = {
