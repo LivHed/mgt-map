@@ -25,7 +25,7 @@ One is designed for desktop view and the other for mobile view. [Check them out 
 ### Existing Features
 * The presentation text is placed under the name of the page and provides a short introduction to the intention of the page, which give the users a direct way of reading about the page the first thing they do when they land on the page.
 * The dropdown menu with the cities in it is placed underneath the introduction text as a natural next step to follow after reading about it and follow the directions given in the text.
-* The functions of the radio buttons when clicked on them is that they returns results with either accommodations or restaurants in the chosen city, depending on which button you click, and shows markericons of the found places.
+* The functions of the radio buttons when clicked on them is that they returns results with either accommodations or restaurants in the chosen city, depending on which button you click, and shows icon markers of the found places. The results are displayed in a discrete way with no background color to keep the simple design of the whole page.
 * The Result list is shown in a responsive way, 20 results at a time. Up to 60 results can be shown for either restaurants or accommodations in each city, if found within the radius I have specified.
 * The More results button shows 20 more results when pressing it. 
 * The zoom function of the map is kept for the users to be able to zoom in even more themselves to see a close-up of where the places are located. 
