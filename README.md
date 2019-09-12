@@ -8,7 +8,7 @@ On this one-page website I include 10 cities that are listed in a Sustainable Ci
 --------------------------------------------------------------------------------------------
 ## UX
 After doing research looking at websites with Google maps included, my goals with the design was set to: 
-1. To make the design suitable for people who care about sustainability with my choice of words, fonts and colors that give the feeling of sustainability and an environmentally conciousness. I wanted to do this with a simple a design as possible.
+1. To make the design suitable for people who care about sustainability with my choice of words, fonts and colors that give the feeling of sustainability and an environmentally conciousness. I wanted to do this with a as simple design as possible.
 2. To make a one page webpage which provides a user friendly and easy layout to quick be able to understand what you can do and how, on the website.
 
 ### User stories
@@ -39,7 +39,6 @@ One is designed for desktop view and the other for mobile view. [Check them out 
 2. I want to add marker clustering for when the places are located close to eachother.
 2. I want to add info windows to show the name and adress of the place in a small window when clicking on the iconmarkers, and also that to be shown in the result list beside the names.
 3. In the future I also want to add an option to perform a textSearch in the cities, to narrow down the search to be more related to "green travels" with specific words related to sustainability, like "organic" or "sustainable".
-4. To fix the Api initMap2 error that´s showing in the console. I tried to get the map from the body, to remove it first and add a new one to it, but it did not work. This doesn´t affect the functionality though, and will be adressed later on. 
 --------------------------------------------------------------------------------------------------------------
 ## Technologies Used
 * **The languages** I have used for this project is [HTML5](https://www.w3schools.com/html/html5_intro.asp), [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3) and [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript). I have used the Bootstrap gridsystem with the built in media queries for the content to be responsive.
@@ -63,6 +62,9 @@ Here I present how my website meet the needs of the users that will visit the si
 * I used [this website](https://validator.w3.org/#validate_by_input) to validate my HTML by direct input.
 * I used [this website](https://jigsaw.w3.org/css-validator/validator.html.en#validate_by_input) to validate my CSS by direct input.
 * I used [JS Hint](https://jshint.com/) to check my Javascript code for errors and potential problems.
+
+#### The responsiveness of the whole website
+* The webpage is fully responsive for these devices: Galaxy S5, Pixel 2, Pixel 2XL, IPhone 5 SE, Iphone 6/7/8, IPhone 6/7/8 Plus, Iphone X, tested in Chrome Developer Tools and Responsinator. 
 
 #### The responsive parts of the website
 * The webpage is responsive since I´m using Bootstrap 4 and it works good on smaller devices too. The dropdown menu, the radiobuttons, the map and resultlist is placed inside of responsive columns.
@@ -96,8 +98,8 @@ Contact form:
 
 4. **Bugs I came across while creating the site and while testing it**
 * When clicking on More results button for the second time, for accommodations in Singapore there are only 8 results showing. This is probably because of that all of the results have been showned within the specified radius in the nearbySearch function in the javascript file.
-* 
-*
+* When testing the responsiveness of the webpage I discovered that the footer is not placed at the bottom of the page (there is space underneath) on the devices Ipad, Ipad Pro and devices with more height than these devices. This is not yet fixed.
+* An Api initMap2 error shows in the console "You have included the Google Maps JavaScript API multiple times on this page. This may cause unexpected errors". I tried to solve it by add id, get the map from the body, to remove it first and add a new one to it, but it did not work. This doesn´t affect the functionality of the page, and will be adressed later on.
 --------------------------------------------------------------------------------------------------------------
 ## Deployment
 **This website is hosted on GitHub pages, and deployed from the master branch. Follow these steps:**
@@ -118,7 +120,8 @@ The landing page must be named index.html for the site to deploy correctly on Gi
 
 ## Credits
 ### Content
-
+* The content on the website was written by me.
+* The results showing with accommodations and restaurants are shown thanks to Google Maps Javascript API.
 
 ### Media
 * The cities are an inspiration from [Arcadis homepage](https://www.arcadis.com/en/global/our-perspectives/sustainable-cities-index-2018/citizen-centric-cities/), and the listed top 10 most sustainable cities according to their Sustainable Cities Index.
