@@ -39,10 +39,6 @@ city.addEventListener("change", function() {
 
 // Search for hotels or restaurants depending on which radiobutton is checked. 
 $("#searchPlaces").click(function() {
-    
-    $('input[name=searchBy]:checked').val();   // To return the value (show icons on the map) only from the selected radiobutton.
-    getExtScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDdUZr-tm7Rmc-0meyJj_jH3VtTzk7FBaU&libraries=places&callback=initMap2");
-    loc = { lat: locations[city.value][0], lng: locations[city.value][1] };
 
     if ($("#accomodationRadio").is(':checked')) {
         search_for = ['lodging'];
@@ -51,6 +47,10 @@ $("#searchPlaces").click(function() {
     else if ($("#restaurantRadio").is(':checked')) {
         search_for = ['restaurant'];
     }
+    
+    $('input[name=searchBy]:checked').val();   // To return the value (show icons on the map) only from the selected radiobutton.
+    getExtScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDdUZr-tm7Rmc-0meyJj_jH3VtTzk7FBaU&libraries=places&callback=initMap2");
+    loc = { lat: locations[city.value][0], lng: locations[city.value][1] };
      
 });
 
