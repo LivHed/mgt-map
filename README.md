@@ -26,21 +26,20 @@ One is designed for desktop view and the other for mobile view. [Check them out 
 * The presentation text is placed under the name of the page and provides a short introduction to the intention of the page, which give the users a direct way of reading about the page the first thing they do when they land on the page.
 * The dropdown menu with the cities in it is placed underneath the introduction text as a natural next step to follow after reading about it and follow the directions given in the text.
 * The functions of the radio buttons when clicked on them is that they returns results with either accommodations or restaurants in the chosen city, depending on which button you click, and shows markericons of the found places.
-* The Result list 
-* The More results button 
-* The navbar and the footer have the same design, which is meant to be a part of the clean design. 
-* A custom scrollbar is added, with a smooth scroll effect. I planned for the scrollbar to be discrete in it´s design.
-* The fullwidth background image is supposed to give the users a feeling of the page´s authenticity when it comes to environmental sustainable thinking. The content scrolls infront of the image.
-* The webpage´s name is placed in a top center position on the page with a transparent background, like a brand or logo.
-* The Download my resume link and the Social links is placed in the footer to be easily accessed on every page on the website.
-* The hover effects on the button is designed with ...a hm color.., and the transition effect is set to feel smooth.
-* A Favicon added for a better overall look of the website. 
+* The Result list...
+* The More results button...
+* (The navbar and the footer have the same design, which is meant to be a part of the clean design.)
+* (A custom scrollbar is added, with a smooth scroll effect. I planned for the scrollbar to be discrete in it´s design.)
+* The background color is supposed to give the users a feeling of the page´s authenticity when it comes to environmental sustainable thinking, and relate to the title of the page with its green insinuation. 
+* The name of the webpage is placed in the navbar in a center position, like a brand or logo, meant to be discrete with the transparent background.
+* (The hover effects on the button is designed with ...a hm color.., and the transition effect is set to feel smooth)
+* (A Favicon is added for a better overall look of the website.)
 * The footer 
 
 ### Features Left to Implement
-1. In the future I want to add more radiobuttons to search for other places in the city, like cafes and parks. 
-2. In the future I also want to change the current..
-3. I would like to change the look of the ... and implement...
+1. In the future I want to add more radiobuttons to search for other places in the city, like cafes and parks.
+2. In the future I also want to add an option to perform a textSearch in the cities, to narrow down the search to be more related to "green travels" with specific words related to sustainability, like "organic" or "sustainable".
+3. (I would like to change the look of the ... and implement...)
 --------------------------------------------------------------------------------------------------------------
 ## Technologies Used
 * **The languages** I have used for this project is [HTML5](https://www.w3schools.com/html/html5_intro.asp), [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3) and [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript). I have used the Bootstrap gridsystem with the built in media queries for the content to be responsive.
@@ -48,11 +47,11 @@ One is designed for desktop view and the other for mobile view. [Check them out 
 * **Frameworks** I have used is Bootstrap 4.3.1. I used the BootstrapCDN on [this page](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
 * **Other tools** I have used are [Cloud9 IDE](https://aws.amazon.com/cloud9/?origin=c9io) for the development of this site: writing, debugging and running my code. GIT was then used to push files to [Github](http://github.com) where the project is stored and deployed.
 * I used **Google maps** [Maps Javascrip API](https://developers.google.com/maps/documentation/javascript/tutorial) for the map function on the page.
-* As part of the **design process** i chose to use [Balsamic](https://balsamiq.com/) to make my wireframes in a simple way with a goodlooking result.
+* As part of the **design process** i chose to use [Balsamic](https://balsamiq.com/) to make my wireframes with a simple yet goodlooking result.
 * I used [Responsinator](http://www.responsinator.com/) to check the **responsiveness** of the page.
 -------------------------------------------------------------------------------------------------------------------
 ## Testing
-Here I present how my website meet the needs of the different kinds of users that will visit the site, which I presented in the section UX: User stories:
+Here I present how my website meet the needs of the users that will visit the site, which I presented in the section UX: User stories:
 
 * As an environmentally conscious traveller I want to have a look at cities with a sustainable focus before I travel there, to get inspired and remember to keep the focus of those things I find most important in the society. --> The information about which cities that are listed as sustainable cities and how to find them in the map are easily seen in the introduction right underneath the heading, and are therefore easy to understand how to find by choosing a city in the dropdown menu, and to finally see on the map and listed below it.
 
@@ -68,7 +67,8 @@ Here I present how my website meet the needs of the different kinds of users tha
 #### The responsive parts of the website
 * The webpage is responsive since I´m using Bootstrap 4 and it works good on smaller devices too. The dropdown menu, the radiobuttons, the map and resultlist is placed inside of responsive columns.
 * The title of the page is inside of a navbar, which is responsive by default.
-* The Clear button responds when it´s clicked and clear the results. 
+* The More results button responds when it´s clicked and clear the results. 
+* The Google maps Javascript API and Places library is responsive in itself and is set to respond to the interactions of the user.
 
 #### Testing process scenarios 
 1. **Zoom in on cities wheen choosing a city in the dropdown menu**
@@ -80,10 +80,10 @@ Here I present how my website meet the needs of the different kinds of users tha
 *
 
 3. **Click on the markers shown on the screen to see the info window **
-* 
+* (will I be able to manage this in time?)
 *
 
-4. **Click the Clear button** remove this 
+4. **Click the More results button**
 * 
 *
 
@@ -114,10 +114,8 @@ The landing page must be named index.html for the site to deploy correctly on Gi
 
 
 ### Media
-* The background picture used in this site was obtained from..
 * The cities are an inspiration from [Arcadis homepage](https://www.arcadis.com/en/global/our-perspectives/sustainable-cities-index-2018/citizen-centric-cities/), and the listed top 10 most sustainable cities according to their Sustainable Cities Index.
 
 ### Acknowledgements
-E.g 
-I Copied the code for the... from ..this page.. and then modified it to what suits my needs.
-The original code for the ... copied from ..this page and then customized for my .. idea... 
+* For the radio buttons in the html code I copied the code snippet for the Inline custom form controls, from W3Schools on [this page](https://www.w3schools.com/bootstrap4/bootstrap_forms_custom.asp) and then modified it to what suited my needs.
+* To perform a nearbySearch in the js code I copied parts of the sample code for the Page Search Pagination example, from [Google maps Javsacript API](https://developers.google.com/maps/documentation/javascript/examples/place-search-pagination).  
