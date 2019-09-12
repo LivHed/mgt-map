@@ -17,8 +17,8 @@ body {
 
 a:link {
     color: #007065;
-    background-color: transparent;
-    text-decoration: none;
+    background-color: transparent; 
+    text-decoration: none; 
 }
 
 a:hover {
@@ -26,7 +26,6 @@ a:hover {
     background-color: transparent;
     text-decoration: none;
 }
-
 
 /* select city menu-----------------------------------*/
 
@@ -52,6 +51,12 @@ a:hover {
 
 #map-area {
     width: auto;
+}
+
+/* result area------------------------------------------*/
+
+#places {
+    font-weight: bold;
 }
 
 /* footer------------------------------------------------*/
